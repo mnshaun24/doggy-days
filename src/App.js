@@ -1,6 +1,5 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import Home from './Pages/Home.js;'
 
 function App() {
 
@@ -28,7 +27,8 @@ function App() {
 
   return (
     <div className="App">
-      {dog && <Home dog={dog}></Home>}
+      <h1>Doggy Days</h1>
+      {/* <p>{dog.data[0].breeds[0].name}</p> */}
     </div>
   );
 }
