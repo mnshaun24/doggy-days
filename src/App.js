@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const url = 'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1';
-  const [dog, setDog] = useState(null);
+  const [dog, setDog] = useState();
 
   useEffect(() => {
     fetch(url, {
@@ -14,8 +14,8 @@ function App() {
         "Content-Type": "application/json"
       }
     })
-    .then(response => response.json())
-    .then(function(data) {
+    .then(res => res.json())
+    .then(data => {
       console.log(data);
       setDog(data)
     })
@@ -23,12 +23,11 @@ function App() {
       console.log(err)
     })
   }, []);
-  
 
   return (
     <div className="App">
       <h1>Doggy Days</h1>
-      {/* <p>{dog.data[0].breeds[0].name}</p> */}
+      <p>{dog && dog[0].breeds[0].name}</p>
     </div>
   );
 }
