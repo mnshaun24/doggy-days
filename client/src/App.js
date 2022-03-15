@@ -1,4 +1,14 @@
 import { useEffect, useState } from 'react';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:3001/graphql',
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
 
 function App() {
 
@@ -24,14 +34,16 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Doggy Days</h1>
-      <img src={dog && dog[0].url} alt="A dog"></img>
-      <p>Breed: {dog && dog[0].breeds[0].name}</p>
-      <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
-      <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
-      <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
-    </div>
+    <ApolloProvider client={client}>
+      <div className="App">
+        <h1>Doggy Days</h1>
+        <img src={dog && dog[0].url} alt="A dog"></img>
+        <p>Breed: {dog && dog[0].breeds[0].name}</p>
+        <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
+        <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
+        <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
+      </div>
+    </ApolloProvider>
   );
 }
 
