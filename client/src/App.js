@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+// import { NavBar } from './components/Navbar';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
