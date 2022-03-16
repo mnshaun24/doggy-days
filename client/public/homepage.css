@@ -1,3 +1,16 @@
 body {
     background: linear-gradient(#e66465, #9198e5);
 }
+img.x {
+    height: 100px;
+    width: 100px;
+}
+
+img.heart {
+    height: 100px;
+    width: 100px;
+}
+
+img.dogpic {
+    height: 300px;
+}
