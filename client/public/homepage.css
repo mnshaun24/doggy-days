@@ -1,0 +1,6 @@
+body {
+    background: url(background.jpeg) no-repeat center;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+}

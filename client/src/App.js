@@ -1,3 +1,4 @@
+import "./index.css"
 import { useEffect, useState } from 'react';
 
 function App() {
