@@ -12,3 +12,6 @@ body {
       monospace;
   }
   
+.dogPic {
+  max-width: 20%;
+}
