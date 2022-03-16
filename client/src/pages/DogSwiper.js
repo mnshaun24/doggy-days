@@ -27,16 +27,17 @@ const DogSwiper = () => {
   
 
     return (
-        <>
+      <section>
         {/* insert header */}
+        <h1>Dinder</h1>
         <img
         src={dog && dog[0].url} 
         alt="A dog"
         className="dogPic">
-
-        </img>
+          </img>
+        <p>Breed: {dog && dog[0].breeds[0].name}</p>
         <Dislike /> <span><Like /></span>
-        </>
+        </section>
     )
 };
 
