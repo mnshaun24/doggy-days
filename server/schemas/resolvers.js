@@ -12,6 +12,16 @@ const resolvers = {
                 return userData;
             }
             throw new AuthenticationError("Not logged in");
+        },
+        //get all users
+        users: async () => {
+            return User.find()
+                .select('-__v -password')
+        },
+        // get a user by username
+        user: async (parent, { phoneNumber }) => {
+            return User.findOne({ phoneNumber })
+            .select('-__v -password')
         }
     },
     Mutation: {
