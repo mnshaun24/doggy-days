@@ -6,17 +6,20 @@ import "./index.css";
 // import SignupForm from './components/SignupForm';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
 
   return (  
+    // <Router>
     <div>
       <DogSwiper />
 
-      {/* <LoginForm></LoginForm> */}
+      {/* <Route exact path="/signup" component={Signup} /> */}
       <Login></Login>
       <Signup></Signup>
    </div>
+  //  </Router>
   );
 }
 export default App;

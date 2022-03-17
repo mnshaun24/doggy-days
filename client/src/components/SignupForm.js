@@ -1,69 +1,88 @@
 import React, { useState } from 'react';
 // import { Form, Button, Modal } from 'react-bootstrap';
 
-// import Auth from '../utils/auth';
-// import { useMutation } from '@apollo/client';
-// import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 
 
 const SignupForm = ({ handleClick }) => {
 
 
-
-
-  // const [userFormData, setUserFormData] = useState({ name: '', phoneNumber: '', password: '' });
-  // // set state for form validation
-  // const [validated] = useState(false);
-  // // set state for alert
-  // const [showAlert, setShowAlert] = useState(false);
-
-  // const [addUser] = useMutation(ADD_USER);
-
+  
+  
   // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setUserFormData({ ...userFormData, [name]: value });
-  // };
+    //   const { name, value } = event.target;
+    //   setUserFormData({ ...userFormData, [name]: value });
+    // };
+    
+    // const handleFormSubmit = async (event) => {
+      //   event.preventDefault();
 
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-
-  //   // check if form has everything (as per react-bootstrap docs)
   //   const form = event.currentTarget;
   //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
-
-  //   try {
-  //     const { data } = await addUser({
-  //       variables: {...userFormData},
-  //     });
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    //   }
     
-  //     Auth.login(data.addUser.token)
+    //   try {
+      //     const { data } = await addUser({
+        //       variables: {...userFormData},
+        //     });
+        
+        //     Auth.login(data.addUser.token)
+        
+        //   } catch (err) {
+          //     console.error(err);
+          //     setShowAlert(true);
+          //   }
+          
+          //   setUserFormData({
+            //     name: '',
+            //     phoneNumber: '',
+            //     password: '',
+            //   });
+            // };
+    const [addUser, { error }] = useMutation(ADD_USER);
+    const [userFormData, setUserFormData] = useState({ name: '', phoneNumber: '', password: '' });
+  
+  
+    const handleChange = (event) => {
+      const { name, value } = event.target;
 
-  //   } catch (err) {
-  //     console.error(err);
-  //     setShowAlert(true);
-  //   }
+      setUserFormData({
+        ...userFormData,
+        [name]: value,
+      });
+    };
 
-  //   setUserFormData({
-  //     name: '',
-  //     phoneNumber: '',
-  //     password: '',
-  //   });
-  // };
+  const handleFormSubmit = async event => {
+    event.preventDefault();
+
+    try {
+      const { data } = await addUser({
+        variables: { ...userFormData }
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   return (
     <>
      <div className="modal-test" style={{backgroundColor: 'blue'}}>
      <div>
       <h2>Sign Up Here: </h2>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <input
           placeholder='Your name here'
           name='name'
           type='text'
           id='name'
+          value={userFormData.name}
+          onChange={handleChange}
         />
         
         <input
@@ -71,19 +90,22 @@ const SignupForm = ({ handleClick }) => {
           name='phoneNumber'
           type='phoneNumber'
           id='phoneNumber'
-          // onChange={handleChange}
+          value={userFormData.phoneNumber}
+          onChange={handleChange}
         />
         <input
           placeholder='*********'
           name='password'
           type='password'
           id='pwd'
-          // onChange={handleChange}
+          value={userFormData.password}
+          onChange={handleChange}
         />
+       <button type='submit' onClick={() => handleClick()}>Submit</button>
       </form>
+      {error && <div>Sign up failed</div>}
     </div>
-       <button onClick={() => handleClick()}>Submit</button>
-     </div>
+  </div>
       
     {/* <Button onClick={handleShow}>Sign up</Button>
       <Modal show={show} onHide={handleClose}>
