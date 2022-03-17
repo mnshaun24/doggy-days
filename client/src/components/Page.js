@@ -1,8 +1,7 @@
 import React from "react";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
 import SavedDogs from "../pages/SavedDogs";
 import DogSwiper from "../pages/DogSwiper";
+import ModalContain from "../pages/ModalContain";
 
 function Page(props) {
     
@@ -13,12 +12,8 @@ function Page(props) {
                 return <DogSwiper />
             case "Saved Dogs":
               return <SavedDogs />
-            case "Login":
-              return <Login />
-            case "Signup":
-                return <Signup />
             default:
-              return <DogSwiper />
+              return <ModalContain />
           }
 
     }
