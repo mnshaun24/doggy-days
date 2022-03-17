@@ -3,7 +3,7 @@ import { Button, Tab, Nav, Modal } from "react-bootstrap";
 // import SignupForm from './SignupForm';
 // import LoginForm from './LoginForm';
 
-const Navbar = () => {
+const ModalContain = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -56,4 +56,4 @@ const Navbar = () => {
 }
 
 
-export default Navbar;
+export default ModalContain;
