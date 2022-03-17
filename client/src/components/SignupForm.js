@@ -7,67 +7,58 @@ import { ADD_USER } from '../utils/mutations';
 
 
 const SignupForm = ({ handleClick }) => {
+  
 
-
+  //   const [userFormData, setUserFormData] = useState({ name: '', phoneNumber: '', password: '' });
+  //   const [addUser, { error }] = useMutation(ADD_USER);
   
   
-  // const handleInputChange = (event) => {
-    //   const { name, value } = event.target;
-    //   setUserFormData({ ...userFormData, [name]: value });
-    // };
-    
-    // const handleFormSubmit = async (event) => {
-      //   event.preventDefault();
+  //   const handleChange = (event) => {
+  //     const { name, value } = event.target;
 
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-    //     event.preventDefault();
-    //     event.stopPropagation();
-    //   }
-    
-    //   try {
-      //     const { data } = await addUser({
-        //       variables: {...userFormData},
-        //     });
-        
-        //     Auth.login(data.addUser.token)
-        
-        //   } catch (err) {
-          //     console.error(err);
-          //     setShowAlert(true);
-          //   }
-          
-          //   setUserFormData({
-            //     name: '',
-            //     phoneNumber: '',
-            //     password: '',
-            //   });
-            // };
-    const [addUser, { error }] = useMutation(ADD_USER);
-    const [userFormData, setUserFormData] = useState({ name: '', phoneNumber: '', password: '' });
-  
-  
-    const handleChange = (event) => {
-      const { name, value } = event.target;
+  //     setUserFormData({
+  //       ...userFormData,
+  //       [name]: value,
+  //     });
+  //   };
 
-      setUserFormData({
-        ...userFormData,
-        [name]: value,
-      });
-    };
+  // const handleFormSubmit = async event => {
+  //   event.preventDefault();
 
-  const handleFormSubmit = async event => {
+  //   try {
+  //     const { data } = await addUser({
+  //       variables: { ...userFormData }
+  //     });
+
+  //     Auth.login(data.addUser.token);
+  //   } catch (e) {
+  //     console.error(e);
+  //   }
+  // };
+
+
+  const [userFormData, setUserFormData] = useState({ phoneNumber: '', password: '' });
+  const [addUser] = useMutation(ADD_USER);
+
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
+    const mutationResponse = await addUser({
+      variables: {
+        name: userFormData.name,
+        password: userFormData.password,
+        phoneNumber: userFormData.phoneNumber,
+      },
+    });
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
+  };
 
-    try {
-      const { data } = await addUser({
-        variables: { ...userFormData }
-      });
-
-      Auth.login(data.addUser.token);
-    } catch (e) {
-      console.error(e);
-    }
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({
+      ...userFormData,
+      [name]: value,
+    });
   };
 
   return (
@@ -103,7 +94,7 @@ const SignupForm = ({ handleClick }) => {
         />
        <button type='submit' onClick={() => handleClick()}>Submit</button>
       </form>
-      {error && <div>Sign up failed</div>}
+      {/* {error && <div>Sign up failed</div>} */}
     </div>
   </div>
       
@@ -127,3 +118,37 @@ const SignupForm = ({ handleClick }) => {
 
 
 export default SignupForm;
+
+
+  // const handleInputChange = (event) => {
+    //   const { name, value } = event.target;
+    //   setUserFormData({ ...userFormData, [name]: value });
+    // };
+    
+    // const handleFormSubmit = async (event) => {
+      //   event.preventDefault();
+
+  //   const form = event.currentTarget;
+  //   if (form.checkValidity() === false) {
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    //   }
+    
+    //   try {
+      //     const { data } = await addUser({
+        //       variables: {...userFormData},
+        //     });
+        
+        //     Auth.login(data.addUser.token)
+        
+        //   } catch (err) {
+          //     console.error(err);
+          //     setShowAlert(true);
+          //   }
+          
+          //   setUserFormData({
+            //     name: '',
+            //     phoneNumber: '',
+            //     password: '',
+            //   });
+            // };
