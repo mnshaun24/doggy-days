@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import { useMutation } from '@apollo/client';
-import { Form, Button, Modal } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import  LoginForm  from '../components/LoginForm';
 // import { Link } from 'react-router-dom';
 // import { LOGIN } from '../utils/auth';
@@ -18,7 +18,7 @@ function Login() {
   return (
 
     <>
-    <Button onClick={() => setIsOpen(true)}>LoginForm here!
+    <Button onClick={() => setIsOpen(true)}>Login here!
      </Button>
      {isOpen && <LoginForm handleClick={handleClick} />}
    </>

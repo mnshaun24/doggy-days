@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 // import Auth from '../utils/auth';
 // import { ADD_USER } from '../utils/mutations';
-import { Form, Button, Modal } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import  SignupForm  from '../components/SignupForm';
 
 const Signup = () => {
@@ -16,7 +16,7 @@ const Signup = () => {
 
   return (
     <>
-     <Button onClick={() => setIsOpen(true)}> Open the Modal here
+     <Button onClick={() => setIsOpen(true)}>Sign up here!
       </Button>
       {isOpen && <SignupForm handleClick={handleClick} />}
     </>
