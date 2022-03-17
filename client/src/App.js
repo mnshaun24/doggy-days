@@ -3,7 +3,9 @@ import DogSwiper from './pages/DogSwiper';
 import "./index.css";
 // import { NavBar } from './components/Navbar';
 // import LoginForm from './components/LoginForm';
-import SignupForm from './components/SignupForm';
+// import SignupForm from './components/SignupForm';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 
 function App() {
 
@@ -12,8 +14,8 @@ function App() {
       <DogSwiper />
 
       {/* <LoginForm></LoginForm> */}
-
-      <SignupForm></SignupForm>
+      <Login></Login>
+      <Signup></Signup>
    </div>
   );
 }

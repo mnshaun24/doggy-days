@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
-import { Form, Button, Modal } from 'react-bootstrap';
+// import { Form, Button, Modal } from 'react-bootstrap';
 
 // import Auth from '../utils/auth';
 // import { useMutation } from '@apollo/client';
 // import { ADD_USER } from '../utils/mutations';
 
 
-const SignupForm = () => {
+const SignupForm = ({ handleClick }) => {
 
-  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
 
   // const [userFormData, setUserFormData] = useState({ name: '', phoneNumber: '', password: '' });
@@ -58,11 +55,29 @@ const SignupForm = () => {
 
   return (
     <>
-      <Form>
-        <Modal show={showModal}></Modal>
-        <Button></Button>
-
-      </Form>
+     <div className="modal-test" style={{backgroundColor: 'blue'}}>
+     <div>
+      <h2>Login</h2>
+      <form>
+        <input
+          placeholder='Your phone number'
+          name='phoneNumber'
+          type='phoneNumber'
+          id='phoneNumber'
+          // onChange={handleChange}
+        />
+        <input
+          placeholder='*********'
+          name='password'
+          type='password'
+          id='password'
+          // onChange={handleChange}
+        />
+      </form>
+    </div>
+       <button onClick={() => handleClick()}>Dinder dog!</button>
+     </div>
+      
     {/* <Button onClick={handleShow}>Sign up</Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
