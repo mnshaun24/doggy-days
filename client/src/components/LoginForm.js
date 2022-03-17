@@ -48,7 +48,7 @@ const LoginForm = ({ handleClick }) => {
     <>
       <div className="modal-test" style={{backgroundColor: 'blue'}}>
       <div>
-      <h2>Login</h2>
+      <h2>Login Here:</h2>
       <form>
         <input
           placeholder='Your phone number'
@@ -66,7 +66,7 @@ const LoginForm = ({ handleClick }) => {
         />
       </form>
     </div>
-       <button onClick={() => handleClick()}>Dinder dog!</button>
+       <button onClick={() => handleClick()}>Submit</button>
      </div>
     </>
   );

@@ -57,8 +57,15 @@ const SignupForm = ({ handleClick }) => {
     <>
      <div className="modal-test" style={{backgroundColor: 'blue'}}>
      <div>
-      <h2>Login</h2>
+      <h2>Sign Up Here: </h2>
       <form>
+        <input
+          placeholder='Your name here'
+          name='name'
+          type='text'
+          id='name'
+        />
+        
         <input
           placeholder='Your phone number'
           name='phoneNumber'
@@ -70,12 +77,12 @@ const SignupForm = ({ handleClick }) => {
           placeholder='*********'
           name='password'
           type='password'
-          id='password'
+          id='pwd'
           // onChange={handleChange}
         />
       </form>
     </div>
-       <button onClick={() => handleClick()}>Dinder dog!</button>
+       <button onClick={() => handleClick()}>Submit</button>
      </div>
       
     {/* <Button onClick={handleShow}>Sign up</Button>
