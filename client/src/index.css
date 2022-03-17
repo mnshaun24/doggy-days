@@ -17,3 +17,7 @@ body {
 .dogPic {
   max-width: 20%;
 }
+
+.hide{
+  display: none;
+}
