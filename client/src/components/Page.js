@@ -8,6 +8,8 @@ function Page(props) {
 
     const renderedPage = () => {
         switch(props.currentPage) {
+            case "Login":
+                return <ModalContain />
             case "Home":
                 return <DogSwiper />
             case "Saved Dogs":
