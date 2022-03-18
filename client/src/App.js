@@ -13,7 +13,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(pages[0]);
 
   return (  
-    <div>
+    <div className="mainbg" style={{ background: "linear-gradient(#e66465, #9198e5)" }}>
       <main>
         <Page currentPage={currentPage} />
       </main>

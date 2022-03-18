@@ -28,6 +28,14 @@ html, body {
 .dogswiperbg {
   height: 100vh
 }
+
+.mainbg {
+  height: 100vh;
+}
+
+.logopic {
+  height: 250px;
+}
 @media (min-width: 320px) {
 html{
   display: inline-block;

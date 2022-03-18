@@ -14,7 +14,13 @@ const ModalContain = () => {
 
   return (
     <>
-    <Button onClick={handleClick}>Login or Sign up here!</Button>
+    <h1>Dinder</h1>
+    <br></br>
+    <br></br>
+    <img className="logopic" src={require('../assets/images/logo.png')} alt="logo"/>
+    <br></br>
+    <br></br>
+    <Button variant="outline-light" onClick={handleClick}>Login or Sign up here!</Button>
       <Modal
         size="lg"
         show={isOpen}
