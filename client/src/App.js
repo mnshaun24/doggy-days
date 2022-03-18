@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./index.css";
 import Page from './components/Page';
+import DogSwiper from './pages/DogSwiper';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
     <div>
       <main>
         <Page currentPage={currentPage} />
+        <DogSwiper />
       </main>
    </div>
   );

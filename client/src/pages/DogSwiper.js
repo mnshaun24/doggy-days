@@ -36,6 +36,9 @@ const DogSwiper = () => {
         className="dogPic">
           </img>
         <p>Breed: {dog && dog[0].breeds[0].name}</p>
+        <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
+        <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
+        <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
         <Dislike /> <span><Like /></span>
         </section>
     )

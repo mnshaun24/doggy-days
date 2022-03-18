@@ -47,6 +47,16 @@ const resolvers = {
 
             const token = signToken(user);
             return { token, user };
+        },
+        saveDog: async (parent, args, context) => {
+            if (context.user) {
+                const updateUser = await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { savedDogs: args.input }},
+                    { new: true }
+                )
+                return updateUser;
+            }
         }
     }
 }

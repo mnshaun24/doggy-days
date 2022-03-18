@@ -15,9 +15,24 @@ const typeDefs = gql`
         users: [User]
         user(phoneNumber: Int!): User
     }
+    type Dog {
+        image: String
+        breed: String
+        characteristics: String
+        life_span: String
+        weight: String
+    }
+    input saveDogData {
+        image: String
+        breed: String
+        characteristics: String
+        life_span: String
+        weight: String
+    }
     type Mutation {
         login(phoneNumber: Int!, password: String!): Auth
         addUser(name: String!, phoneNumber: Int!, password: String!): Auth
+        saveDog(input: saveDogData): User
     }
 `;
 

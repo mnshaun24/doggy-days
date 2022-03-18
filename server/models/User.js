@@ -1,6 +1,8 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+const dogSchema = require('./Dog');
+
 const userSchema = new Schema(
   {
     name: {
@@ -19,7 +21,7 @@ const userSchema = new Schema(
       required: true,
     },
     // set savedDogs to be an array of data that adheres to the bookSchema
-    // savedDogs: [dogSchema],
+    savedDogs: [dogSchema],
   },
   // set this to use virtual below
   {
