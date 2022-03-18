@@ -43,42 +43,42 @@ const SignupForm = () => {
   };
 
   return (
-    <>
-      <div>
-        <h2>Sign Up Here: </h2>
-        <form onSubmit={handleFormSubmit}>
-          <input
-            placeholder='Your name here'
-            name='name'
-            type='name'
-            id='name'
-            value={userFormData.name}
-            onChange={handleInputChange}
-          />
-          <input
-            placeholder='Your phone number'
-            name='phoneNumber'
-            type='number'
-            // id='phoneNumber'
-            value={userFormData.phoneNumber}
-            onChange={handleInputChange}
-          />
-          <input
-            placeholder='*********'
-            name='password'
-            type='password'
-            id='pwd'
-            value={userFormData.password}
-            onChange={handleInputChange}
-          />
-          <button type="submit">Submit
-            <Link to={"home"}>
-            </Link>
-          </button>
-        </form>
-        {error && <div>Sign up failed</div>}
-      </div>
-    </>
+    // <>
+    //   <div>
+    //     <h2>Sign Up Here: </h2>
+    //     <form onSubmit={handleFormSubmit}>
+    //       <input
+    //         placeholder='Your name here'
+    //         name='name'
+    //         type='name'
+    //         id='name'
+    //         value={userFormData.name}
+    //         onChange={handleInputChange}
+    //       />
+    //       <input
+    //         placeholder='Your phone number'
+    //         name='phoneNumber'
+    //         type='number'
+    //         // id='phoneNumber'
+    //         value={userFormData.phoneNumber}
+    //         onChange={handleInputChange}
+    //       />
+    //       <input
+    //         placeholder='*********'
+    //         name='password'
+    //         type='password'
+    //         id='pwd'
+    //         value={userFormData.password}
+    //         onChange={handleInputChange}
+    //       />
+    //       <button type="submit">Submit
+    //         <Link to={"home"}>
+    //         </Link>
+    //       </button>
+    //     </form>
+    //     {error && <div>Sign up failed</div>}
+    //   </div>
+    // </>
   )
 }
 

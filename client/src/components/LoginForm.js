@@ -40,8 +40,8 @@ const LoginForm = () => {
   };
 
   return (
-    <>
-      <div>
+    // <>
+      {/* <div>
         <h2>Login Here:</h2>
         <form onSubmit={handleFormSubmit}>
           <input
@@ -67,7 +67,7 @@ const LoginForm = () => {
         </form>
         {error && <div>Login failed</div>}
       </div>
-    </>
+    </> */}
   );
 };
 
