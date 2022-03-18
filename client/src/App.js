@@ -1,23 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./index.css";
-import Page from './components/Page';
+import DogSwiper from './pages/DogSwiper';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ModalContain from './pages/ModalContain';
+// import SavedDogs from "./pages/SavedDogs";
 
 function App() {
 
-  const [pages] = useState([
-    "Login",
-    "Home",
-    "Saved Dogs"
-  ]);
 
-  const [currentPage, setCurrentPage] = useState(pages[0]);
 
-  return (  
+  return ( 
+    <Router> 
     <div>
       <main>
-        <Page currentPage={currentPage} />
+        <Routes>
+        <Route exact path="/" element={<ModalContain />} />
+        <Route exact path="home" element={<DogSwiper />} />
+        {/* <Route exact path="/saved" component={SavedDogs} /> */}
+        </Routes>
+
       </main>
    </div>
+   </Router>
+
   );
 }
 export default App;

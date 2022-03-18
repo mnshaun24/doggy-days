@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import DogSwiper from '../pages/DogSwiper';
+import { Link } from "react-router-dom";
 // import { Form, Button, Modal } from 'react-bootstrap';
 // import { useMutation } from '@apollo/client';
 // import { Link } from 'react-router-dom';
@@ -6,7 +8,7 @@ import React, { useState } from 'react';
 // import { LOGIN } from '../utils/mutations';
 // import Auth from '../utils/auth';
 
-const LoginForm = ({ handleClick }) => {
+const LoginForm = (openHomePage) => {
   // const [userFormData, setUserFormData] = useState({ phoneNumber: '', password: '' });
   // const [validated] = useState(false);
   // const [showModal, setShowModal] = useState(false);
@@ -45,6 +47,10 @@ const LoginForm = ({ handleClick }) => {
   //   });
   // };
 
+    function submitClick() {
+      
+    }
+
   return (
     <>
       <div>
@@ -66,8 +72,8 @@ const LoginForm = ({ handleClick }) => {
         />
       </form>
     </div>
-    {/* <Link to = {"Signup"}> Sign up here: </Link> */}
-       <button onClick={() => handleClick()}>Submit</button>
+       <Link to={"home"} onClick={submitClick}>Submit
+       </Link>
   
     </>
   );
@@ -76,7 +82,6 @@ const LoginForm = ({ handleClick }) => {
 export default LoginForm;
 
 
-{/* <form onSubmit={handleFormSubmit}></form> */}
 
 
 

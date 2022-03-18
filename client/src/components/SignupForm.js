@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 // import { Form, Button, Modal } from 'react-bootstrap';
 
 // import Auth from '../utils/auth';
@@ -6,7 +7,12 @@ import React, { useState } from 'react';
 // import { ADD_USER } from '../utils/mutations';
 
 
-const SignupForm = ({ handleClick }) => {
+const SignupForm = () => {
+
+  function submitClick() {
+      
+  }
+
   
 
   //   const [userFormData, setUserFormData] = useState({ name: '', phoneNumber: '', password: '' });
@@ -91,9 +97,10 @@ const SignupForm = ({ handleClick }) => {
           // value={userFormData.password}
           // onChange={handleChange}
         />
-       <button type='submit' onClick={() => handleClick()}>Submit</button>
+               <Link to={"home"} onClick={submitClick}>Submit
+       </Link>
+
       </form>
-      {/* {error && <div>Sign up failed</div>} */}
     </div>
       
     {/* <Button onClick={handleShow}>Sign up</Button>
