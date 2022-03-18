@@ -19,3 +19,22 @@ body {
 .hide{
   display: none;
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.dogswiperbg {
+  height: 100vh
+}
+@media (min-width: 320px) {
+html{
+  display: inline-block;
+  text-align: left;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+}

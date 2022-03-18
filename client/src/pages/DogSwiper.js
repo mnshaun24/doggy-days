@@ -28,6 +28,7 @@ const DogSwiper = () => {
 
     return (
       <section>
+        <div className="dogswiperbg" style={{ background: "linear-gradient(#e66465, #9198e5)" }}>
         {/* insert header */}
         <h1>Dinder</h1>
         <img
@@ -37,6 +38,7 @@ const DogSwiper = () => {
           </img>
         <p>Breed: {dog && dog[0].breeds[0].name}</p>
         <Dislike /> <span><Like /></span>
+        </div>
         </section>
     )
 };
