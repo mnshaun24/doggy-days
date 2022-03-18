@@ -1,73 +1,59 @@
 import React, { useState } from 'react';
-// import { Form, Button, Modal } from 'react-bootstrap';
-// import { useMutation } from '@apollo/client';
-// import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
 
-// import { LOGIN } from '../utils/mutations';
+import { LOGIN } from '../utils/mutations';
 // import Auth from '../utils/auth';
 
-const LoginForm = ({ handleClick }) => {
-  // const [userFormData, setUserFormData] = useState({ phoneNumber: '', password: '' });
-  // const [validated] = useState(false);
-  // const [showModal, setShowModal] = useState(false);
-  // const [login] = useMutation(LOGIN);
+const LoginForm = () => {
+  
+   const [userFormData, setUserFormData] = useState({ phoneNumber: '', password: '' });
 
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setUserFormData({ ...userFormData, [name]: value });
-  // };
+   const [login, { error }] = useMutation(LOGIN);
 
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
+     const handleInputChange = (event) => {
+     const { name, value } = event.target;
+     setUserFormData({ ...userFormData, [name]: value });
+   };
 
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
+   const handleFormSubmit = async (event) => {
+     event.preventDefault();
 
-  //   try {
-  //     const {data} = await login({
-  //       variables: {...userFormData},
-  //     });
+     try {
+       const { data } = await login({
+         variables: {...userFormData},
+       });
 
-
-  //    Auth.login(data.login.token);
-  //   } catch (err) {
-  //     console.error(err);
-  //     setShowModal(true);
-  //   }
-
-  //   setUserFormData({
-  //     name: '',
-  //     phoneNumber: '',
-  //     password: '',
-  //   });
-  // };
+       console.log(data);
+     } catch (e) {
+       console.error(e);
+     }
+   };
 
   return (
     <>
       <div>
       <h2>Login Here:</h2>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <input
           placeholder='Your phone number'
           name='phoneNumber'
           type='phoneNumber'
           id='phoneNumber'
-          // onChange={handleChange}
+          value={userFormData.phoneNumber}
+          onChange={handleInputChange}
         />
         <input
           placeholder='*********'
           name='password'
           type='password'
           id='password'
-          // onChange={handleChange}
+          value={userFormData.password}
+          onChange={handleInputChange}
         />
+        <button type="submit">Submit</button>
       </form>
+      {error && <div>Login failed</div>}
     </div>
-    {/* <Link to = {"Signup"}> Sign up here: </Link> */}
-       <button onClick={() => handleClick()}>Submit</button>
   
     </>
   );
@@ -75,84 +61,6 @@ const LoginForm = ({ handleClick }) => {
 
 export default LoginForm;
 
-
-{/* <form onSubmit={handleFormSubmit}></form> */}
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState } from 'react';
-// import { Form, Button, Modal } from 'react-bootstrap';
-
-// import { LOGIN } from '../utils/mutations';
-// import Auth from '../utils/auth';
-
-// const login = () => {
-//   const [userFormData, setUserFormData] = useState({ phoneNumber: '', password: '' });
-//   const [validated] = useState(false);
-//   // const [showAlert, setShowAlert] = useState(false);
-
-//   const [show, setShow] = useState(false);
-
-//   const handleClose = () => setShow(false);
-//   const handleShow = () => setShow(true);
-
-//   const handleInputChange = (event) => {
-//     const { name, value } = event.target;
-//     setUserFormData({ ...userFormData, [name]: value });
-//   };
-
-//   const handleFormSubmit = async (event) => {
-//     event.preventDefault();
-
-//     const form = event.currentTarget;
-//     if (form.checkValidity() === false) {
-//       event.preventDefault();
-//       event.stopPropagation();
-//     }
-
-//     try {
-//       const response = await LOGIN(userFormData);
-
-//       if (!response.ok) {
-//         throw new Error('Something went wrong.');
-//       }
-
-//       const { token, user } = await response.json();
-//       console.log(user);
-//       Auth.login(token);
-//     } catch (err) {
-//       console.error(err);
-//       setShow(true);
-//     }
-
-//     setUserFormData({
-//       phoneNumber: '',
-//       password: '',
-//     });
-//   };
-
-//   return (
-//     <>
-//       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-//         <Modal show={show}>
-
-//         </Modal>
-
-//       </Form>
-//     </>
-//   )
-// }
-
-// export default login;
 // import React, { useState } from 'react';
 
 
