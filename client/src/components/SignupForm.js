@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-// import Auth from '../utils/auth';
- import { useMutation } from '@apollo/client';
- import { ADD_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 
 
 const SignupForm = () => {
@@ -21,7 +21,7 @@ const SignupForm = () => {
       });
     };
 
-  const handleFormSubmit = async event => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
@@ -30,7 +30,7 @@ const SignupForm = () => {
       });
 
       console.log(data);
-      // Auth.login(data.addUser.token);
+      Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
     }
@@ -41,31 +41,6 @@ const SignupForm = () => {
       password: ''
     })
   };
-
-
-  // const [userFormData, setUserFormData] = useState({ phoneNumber: '', password: '' });
-  // const [addUser] = useMutation(ADD_USER);
-
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-  //   const mutationResponse = await addUser({
-  //     variables: {
-  //       name: userFormData.name,
-  //       password: userFormData.password,
-  //       phoneNumber: userFormData.phoneNumber,
-  //     },
-  //   });
-  //   const token = mutationResponse.data.addUser.token;
-  //   Auth.login(token);
-  // };
-
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setUserFormData({
-  //     ...userFormData,
-  //     [name]: value,
-  //   });
-  // };
 
   return (
     <>
