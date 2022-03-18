@@ -1,23 +1,47 @@
-import React, { useState } from 'react';
+
+import React from 'react';
 import "./index.css";
-import Page from './components/Page';
+import DogSwiper from './pages/DogSwiper';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ModalContain from './pages/ModalContain';
+// import SavedDogs from "./pages/SavedDogs";
+
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import NavBar from './components/navbar';
 
 function App() {
 
-  const [pages] = useState([
-    "Login",
-    "Home",
-    "Saved Dogs"
-  ]);
+  const httpLink = createHttpLink({
+    uri: '/graphql',
+  });
 
-  const [currentPage, setCurrentPage] = useState(pages[0]);
+  const client = new ApolloClient({
+    link: httpLink,
+    cache: new InMemoryCache(),
+  });
+
+
+
+
+
+
 
   return (  
-    <div className="mainbg" style={{ background: "linear-gradient(#e66465, #9198e5)" }}>
-      <main>
-        <Page currentPage={currentPage} />
-      </main>
-   </div>
+    <ApolloProvider client={client}>
+      <Router>
+      <div>
+        <NavBar></NavBar>
+        <main>
+           <Routes>
+        <Route exact path="/" element={<ModalContain />} />
+        <Route exact path="home" element={<DogSwiper />} />
+        {/* <Route exact path="/saved" component={SavedDogs} /> */}
+        </Routes>
+        </main>
+      </div>
+      </Router>
+   </ApolloProvider>
+
   );
 }
 export default App;
