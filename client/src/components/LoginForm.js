@@ -60,8 +60,10 @@ const LoginForm = () => {
           value={userFormData.password}
           onChange={handleInputChange}
         />
-        <Link to={"home"}>Submit
-       </Link>
+        <button type="submit">Submit
+          <Link to={"home"}>
+        </Link>
+       </button>
       </form>
       {error && <div>Login failed</div>}
     </div>

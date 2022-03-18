@@ -71,8 +71,10 @@ const SignupForm = () => {
           value={userFormData.password}
           onChange={handleInputChange}
         />
-          <Link to={"home"}>Submit
+          <button type="submit">Submit
+          <Link to={"home"}>
         </Link>
+        </button>
       </form>
       {error && <div>Sign up failed</div>}
     </div>
