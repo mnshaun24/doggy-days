@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Tab, Nav, Modal } from "react-bootstrap";
-// import SignupForm from './SignupForm';
-// import LoginForm from './LoginForm';
+import SignupForm from '../components/SignupForm';
+import LoginForm from '../components/LoginForm';
 
 const ModalContain = () => {
 
@@ -39,12 +39,10 @@ const ModalContain = () => {
           <Modal.Body>
             <Tab.Content>
               <Tab.Pane eventKey="login">
-                Login
-                 {/* <LoginForm handleModalClose={() => setIsOpen(false)} /> */}
+                 <LoginForm handleModalClose={() => setIsOpen(false)} />
               </Tab.Pane>
               <Tab.Pane eventKey="signup">
-                Signup
-                {/* <SignupForm handleModalClose={() => setIsOpen(false)} />  */}
+                <SignupForm handleModalClose={() => setIsOpen(false)} /> 
               </Tab.Pane>
             </Tab.Content>
           </Modal.Body>

@@ -47,7 +47,6 @@ const LoginForm = ({ handleClick }) => {
 
   return (
     <>
-      <div className="modal-test" style={{backgroundColor: 'blue'}}>
       <div>
       <h2>Login Here:</h2>
       <form>
@@ -69,7 +68,7 @@ const LoginForm = ({ handleClick }) => {
     </div>
     {/* <Link to = {"Signup"}> Sign up here: </Link> */}
        <button onClick={() => handleClick()}>Submit</button>
-     </div>
+  
     </>
   );
 };
