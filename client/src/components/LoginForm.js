@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+
+import DogSwiper from '../pages/DogSwiper';
+import { Link } from "react-router-dom";
+
+
 import { useMutation } from '@apollo/client';
 
 import { LOGIN } from '../utils/mutations';
@@ -60,6 +65,10 @@ const LoginForm = () => {
       </form>
       {error && <div>Login failed</div>}
     </div>
+
+       <Link to={"home"} onClick={submitClick}>Submit
+       </Link>
+
   
     </>
   );
@@ -67,60 +76,3 @@ const LoginForm = () => {
 
 export default LoginForm;
 
-// import React, { useState } from 'react';
-
-
-// function loginForm (props) {
-
-//   const [show, setShow] = useState(false);
-
-//   const handleClose = () => setShow(false);
-//   const handleShow = () => setShow(true);
-//   return (
-//     <>
-//       <Button onClick={handleShow}>
-//         Login 
-//       </Button>
-
-//       <Modal show={show} onHide={handleClose}>
-//         <Modal.Header closeButton>
-//           <Modal.Title>Login </Modal.Title>
-//         </Modal.Header>
-//         <Modal.Body>
-//           <form>
-//             <div className="phoneNumber">
-//               <label htmlFor='phoneNumber' className="phoneNumber">Phone Number:</label>
-//               <input type="text" name="phoneNumber" />
-//             </div>
-//             <div className="password">
-//               <label htmlFor='password'>Password:</label>
-//               <input type="password" ></input>
-//             </div>
-//           </form>
-//         </Modal.Body>
-//         <Modal.Footer>
-//           <Button onClick={handleClose}></Button>
-//         </Modal.Footer>
-//       </Modal>
-//     </>
-//   )
-// }
-
-
-// return (
-//   <div className="modalBackdrop">
-//     <div className="modalContainer">
-//       <h3 className="modalTitle"> Login </h3>
-//       <form>
-//         <div className="phoneNumber">
-//           <label htmlFor='phoneNumber' className="phoneNumber">Phone Number:</label>
-//           <input type="text" name="phoneNumber" />
-//         </div>
-//         <div className="password">
-//           <label htmlFor='password'>Password:</label>
-//           <input type="password" ></input>
-//         </div>
-//       </form>
-//     </div>
-//   </div>
-// );

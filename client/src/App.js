@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import React from 'react';
 import "./index.css";
-import Page from './components/Page';
+import DogSwiper from './pages/DogSwiper';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ModalContain from './pages/ModalContain';
+// import SavedDogs from "./pages/SavedDogs";
+
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import NavBar from './components/navbar';
 
@@ -16,13 +20,11 @@ function App() {
     cache: new InMemoryCache(),
   });
 
-  const [pages] = useState([
-    "Login",
-    "Home",
-    "Saved Dogs"
-  ]);
 
-  const [currentPage, setCurrentPage] = useState(pages[0]);
+
+
+
+
 
   return (  
     <ApolloProvider client={client}>
@@ -30,11 +32,16 @@ function App() {
       <div>
         <NavBar></NavBar>
         <main>
-          <Page currentPage={currentPage} />
+           <Routes>
+        <Route exact path="/" element={<ModalContain />} />
+        <Route exact path="home" element={<DogSwiper />} />
+        {/* <Route exact path="/saved" component={SavedDogs} /> */}
+        </Routes>
         </main>
       </div>
       </Router>
    </ApolloProvider>
+
   );
 }
 export default App;

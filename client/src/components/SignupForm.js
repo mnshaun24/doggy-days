@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 
+import { Link } from 'react-router-dom';
+
+
 import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
 
 const SignupForm = () => {
+
   
 
     const [userFormData, setUserFormData] = useState({ name: '', phoneNumber: '', password: '' });
@@ -72,9 +76,11 @@ const SignupForm = () => {
           value={userFormData.password}
           onChange={handleInputChange}
         />
-       <button type='submit'>Submit</button>
+
+               <Link to={"home"} onClick={submitClick}>Submit
+       </Link>
+
       </form>
-      {error && <div>Sign up failed</div>}
     </div>
     </>
       
@@ -83,37 +89,3 @@ const SignupForm = () => {
 
 
 export default SignupForm;
-
-
-  // const handleInputChange = (event) => {
-    //   const { name, value } = event.target;
-    //   setUserFormData({ ...userFormData, [name]: value });
-    // };
-    
-    // const handleFormSubmit = async (event) => {
-      //   event.preventDefault();
-
-  //   const form = event.currentTarget;
-  //   if (form.checkValidity() === false) {
-    //     event.preventDefault();
-    //     event.stopPropagation();
-    //   }
-    
-    //   try {
-      //     const { data } = await addUser({
-        //       variables: {...userFormData},
-        //     });
-        
-        //     Auth.login(data.addUser.token)
-        
-        //   } catch (err) {
-          //     console.error(err);
-          //     setShowAlert(true);
-          //   }
-          
-          //   setUserFormData({
-            //     name: '',
-            //     phoneNumber: '',
-            //     password: '',
-            //   });
-            // };
