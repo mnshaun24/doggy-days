@@ -6,7 +6,7 @@ function Header(props) {
 
     return (
         <header>
-            <Navbar pageLinks={pageLinks} setCurrentPage={setCurrentPage} />
+            {/* <Navbar pageLinks={pageLinks} setCurrentPage={setCurrentPage} /> */}
         </header>
     )
 }
