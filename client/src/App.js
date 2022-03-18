@@ -30,7 +30,9 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
       <div>
+        <header>
         <NavBar></NavBar>
+        </header>
         <main>
            <Routes>
         <Route exact path="/" element={<ModalContain />} />

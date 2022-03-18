@@ -10,8 +10,8 @@ const NavBar = () => {
         <>
         <Navbar>
             <Container fluid>
-                <Navbar.Brand as={Link} to='/'>
-                    Dinder
+                <Navbar.Brand as={Link} to='home'>
+                    DinderHome
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar"></Navbar.Toggle>
                 <Navbar.Collapse id="navbar">

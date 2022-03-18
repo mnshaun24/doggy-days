@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import DogSwiper from '../pages/DogSwiper';
+// import DogSwiper from '../pages/DogSwiper';
 import { Link } from "react-router-dom";
 
 
@@ -61,14 +61,10 @@ const LoginForm = () => {
           value={userFormData.password}
           onChange={handleInputChange}
         />
-        <button type="submit">Submit</button>
+        <Link to={"home"} type="submit">Submit</Link>
       </form>
       {error && <div>Login failed</div>}
     </div>
-
-       <Link to={"home"} onClick={submitClick}>Submit
-       </Link>
-
   
     </>
   );

@@ -75,10 +75,10 @@ const SignupForm = () => {
           id='pwd'
           value={userFormData.password}
           onChange={handleInputChange}
-        />
+                  />
+                          <Link to={"home"} type="submit">Submit</Link>
 
-               <Link to={"home"} onClick={submitClick}>Submit
-       </Link>
+
 
       </form>
     </div>
