@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
-
 import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
-
 const SignupForm = () => {
-
-  
 
     const [userFormData, setUserFormData] = useState({ name: '', phoneNumber: '', password: '' });
     const [addUser, { error }] = useMutation(ADD_USER);
@@ -59,7 +55,6 @@ const SignupForm = () => {
           value={userFormData.name}
           onChange={handleInputChange}
         />
-        
         <input
           placeholder='Your phone number'
           name='phoneNumber'
@@ -76,14 +71,12 @@ const SignupForm = () => {
           value={userFormData.password}
           onChange={handleInputChange}
         />
-
-               <Link to={"home"} onClick={submitClick}>Submit
-       </Link>
-
+          <Link to={"home"}>Submit
+        </Link>
       </form>
+      {error && <div>Sign up failed</div>}
     </div>
-    </>
-      
+    </> 
   )
 }
 
