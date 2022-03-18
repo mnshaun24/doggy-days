@@ -34,6 +34,12 @@ const SignupForm = () => {
     } catch (e) {
       console.error(e);
     }
+
+    setUserFormData({
+      name: '',
+      phoneNumber: '',
+      password: ''
+    })
   };
 
 
@@ -78,7 +84,7 @@ const SignupForm = () => {
         <input
           placeholder='Your phone number'
           name='phoneNumber'
-          type='phoneNumber'
+          type='number'
           // id='phoneNumber'
           value={userFormData.phoneNumber}
           onChange={handleInputChange}
