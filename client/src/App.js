@@ -20,12 +20,6 @@ function App() {
     cache: new InMemoryCache(),
   });
 
-
-
-
-
-
-
   return (  
     <ApolloProvider client={client}>
       <Router>
@@ -36,7 +30,7 @@ function App() {
         <main>
            <Routes>
         <Route exact path="/" element={<ModalContain />} />
-        <Route exact path="home" element={<DogSwiper />} />
+        <Route exact path="/home" element={<DogSwiper />} />
         {/* <Route exact path="/saved" component={SavedDogs} /> */}
         </Routes>
         </main>

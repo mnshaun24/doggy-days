@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 // import DogSwiper from '../pages/DogSwiper';
 import { Link } from "react-router-dom";
 
-
 import { useMutation } from '@apollo/client';
 
 import { LOGIN } from '../utils/mutations';
@@ -61,14 +60,14 @@ const LoginForm = () => {
           value={userFormData.password}
           onChange={handleInputChange}
         />
-        <Link to={"home"} type="submit">Submit</Link>
+        <button type="submit">Submit
+          
+       </button>
       </form>
       {error && <div>Login failed</div>}
     </div>
-  
     </>
   );
 };
 
 export default LoginForm;
-
