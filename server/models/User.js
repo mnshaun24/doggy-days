@@ -1,36 +1,36 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const userSchema = new Schema({
-  firstName: {
-    type: String,
-    required: true,
-    trim: true
+const userSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    phoneNumber: {
+      type: Number,
+      required: true,
+      unique: true,
+      minlength: 10,
+      maxlength: 10
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    // set savedDogs to be an array of data that adheres to the bookSchema
+    // savedDogs: [dogSchema],
   },
-  // lastName: {
-  //   type: String,
-  //   required: true,
-  //   trim: true
-  // },
-  phoneNumber: {
-    type: Number,
-    required: true
-  },
-  // email: {
-  //   type: String,
-  //   required: true,
-  //   unique: true,
-  //   match: [/.+@.+\..+/, 'Must match an email address!']
-  // },
-  password: {
-    type: String,
-    required: true,
-    minLength: 4
+  // set this to use virtual below
+  {
+    toJSON: {
+      virtuals: true,
+    },
   }
-})
+);
 
-userSchema.pre('save', async function(next) {
+// hash user password
+userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
@@ -39,11 +39,11 @@ userSchema.pre('save', async function(next) {
   next();
 });
 
-userSchema.methods.isCorrectPassword = async function(password) {
+// custom method to compare and validate password for logging in
+userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-
-const User = mongoose.model('User', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;
