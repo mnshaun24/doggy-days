@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 
 import { LOGIN } from '../utils/mutations';
-// import Auth from '../utils/auth';
+import Auth from '../utils/auth';
 
 const LoginForm = () => {
   
-   const [userFormData, setUserFormData] = useState({ phoneNumber: '', password: '' });
+  const [userFormData, setUserFormData] = useState({ phoneNumber: '', password: '' });
 
-   const [login, { error }] = useMutation(LOGIN);
+  const [login, { error }] = useMutation(LOGIN);
 
-     const handleInputChange = (event) => {
+  const handleInputChange = (event) => {
      const { name, value } = event.target;
      setUserFormData({ ...userFormData, [name]: value });
    };
@@ -24,9 +24,15 @@ const LoginForm = () => {
        });
 
        console.log(data);
+       Auth.login(data.login.token)
      } catch (e) {
        console.error(e);
      }
+
+     setUserFormData({
+       phoneNumber: '',
+       password: ''
+     })
    };
 
   return (
