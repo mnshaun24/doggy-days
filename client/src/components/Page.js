@@ -21,7 +21,7 @@ function Page(props) {
     }
 
     return (
-        <section>
+        <section className="mainpg">
             {renderedPage()}
         </section>
     );
