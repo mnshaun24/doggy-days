@@ -19,8 +19,8 @@ const DogSwiper = () => {
 
     const url = 'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1';
     const [dog, setDog] = useState();
-  
-    useEffect(() => {
+
+    function getDog() {
       fetch(url, {
         method: 'GET',
         headers: {
@@ -36,31 +36,42 @@ const DogSwiper = () => {
       .catch(function(err) {
         console.log(err)
       })
-    }, []);
+    }
   
-    const handleSaveDog = async (dogId) => {
-     console.log(dogId);
-     const dogToSave = dogPull.find((dog) => dog[0].id === dogId)
+    useEffect(() => {
+      getDog();
+    }, []);
 
-     const token = Auth.loggedIn() ? Auth.getToken() : null;
+    const handleNextDog = () => {
+      getDog();
+    }
+  
+    // const handleSaveDog = async (dogId) => {
+    //  console.log(dogId);
+    //  const dogToSave = dogPull.find((dog) => dog[0].id === dogId)
 
-     if (!token) {
-       return false;
-     }
+    //  const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-     try {
-       const response = await saveDog({
-         variables: {
-           input: dogToSave
-         }
-       });
-       console.log(response);
+    //  if (!token) {
+    //    return false;
+    //  }
 
-       setSavedDogIds([...savedDogIds, dogToSave.dogId]);
-     } catch (err) {
-       console.error(err);
-     }
-    };
+    //  try {
+    //    const response = await saveDog({
+    //      variables: {
+    //        input: dogToSave
+    //      }
+    //    });
+    //    console.log(response);
+
+    //    setSavedDogIds([...savedDogIds, dogToSave.dogId]);
+    //  } catch (err) {
+    //    console.error(err);
+    //  }
+    // };
+    const handleSaveDog = async (id) => {
+      console.log(dog);
+    }
 
     return (
       <section>
@@ -74,8 +85,11 @@ const DogSwiper = () => {
           <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
           <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
           {Auth.loggedIn() && (
-            <Button 
-            disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog(dog[0].id)}></Button>
+            <>
+              <Button 
+              disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog(dog[0].id)}>Save Dog</Button>
+              <Button onClick={() => handleNextDog()}>Next</Button>
+            </>    
           )}
         </Card.Body>
       </Container>
