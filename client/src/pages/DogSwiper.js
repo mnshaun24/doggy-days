@@ -8,6 +8,14 @@ import { saveDogIds, getSavedDogIds } from '../utils/localStorage';
 
 const DogSwiper = () => {
 
+    const [savedDogIds, setSavedDogIds] = useState(getSavedDogIds());
+
+    useEffect(() => {
+      return () => saveDogIds(savedDogIds);
+    });
+
+    const [saveDog] = useMutation(SAVE_DOG);
+
     const url = 'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1';
     const [dog, setDog] = useState();
   
@@ -29,25 +37,29 @@ const DogSwiper = () => {
       })
     }, []);
   
+    const handleSaveDog = async (id) => {
+      
+    }
 
     return (
       <section>
-        {/* insert header */}
         
-        {Auth.loggedIn() && (
-          <Container>
-            <Card.Body>
-              <Card.Img src={dog[0].url} alt={`This is a ${dog[0].breeds[0].name}`}></Card.Img>
-              <Card.Title>{dog[0].breeds[0].name}</Card.Title>
-              <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
-              <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
-              <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
-              {/* {Auth.loggedIn() && (
-                
-              )} */}
-            </Card.Body>
-          </Container>
-        )}
+     {Auth.loggedIn() && (
+      <Container>
+        <Card.Body>
+          <Card.Img src={dog && dog[0].url} alt={`This is a ${dog && dog[0].breeds[0].name}`}></Card.Img>
+          <Card.Title>{dog && dog[0].breeds[0].name}</Card.Title>
+          <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
+          <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
+          <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
+          {Auth.loggedIn() && (
+            <Button 
+            disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog(dog[0].id)}></Button>
+          )}
+        </Card.Body>
+      </Container>
+         )}
+         
         </section>
     )
 };
@@ -62,3 +74,18 @@ export default DogSwiper;
     //   <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
     //   <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
     // </div>
+
+    // {Auth.loggedIn() && (
+    //   <Container>
+    //     <Card.Body>
+    //       <Card.Img src={dog && dog[0].url} alt={`This is a ${dog[0].breeds[0].name}`}></Card.Img>
+    //       <Card.Title>{dog && dog[0].breeds[0].name}</Card.Title>
+    //       <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
+    //       <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
+    //       <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
+    //       {/* {Auth.loggedIn() && (
+            
+    //       )} */}
+    //     </Card.Body>
+    //   </Container>
+    //     )
