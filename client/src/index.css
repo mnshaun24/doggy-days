@@ -46,6 +46,32 @@ h2 {
   color: white;
 }
 
+.nav-pills .nav-link.active {
+  color: #fff;
+  background-color: #9198e5;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+
+.nav-link:focus, .nav-link:hover {
+  color: #9198e5;
+}
+
+a:hover {
+  color: #9198e5;
+}
+
+.nav-pills .show>.nav-link {
+  color: #fff;
+  background-color: #9198e5;
+}
+
 @media (min-width: 320px) {
   body{
     background-position: top 35px left -250px;
