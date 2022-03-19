@@ -29,7 +29,6 @@ const DogSwiper = () => {
       })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         setDog(data)
       })
       .catch(function(err) {
@@ -70,7 +69,6 @@ const DogSwiper = () => {
         </Card.Body>
       </Container>
          )}
-         
         </section>
     )
 };
