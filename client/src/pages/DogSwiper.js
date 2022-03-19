@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Dislike from "../components/Dislike";
-import Like from "../components/Like";
+import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+
+import Auth from '../utils/auth';
+import { useMutation } from "@apollo/client";
+import { SAVE_DOG } from "../utils/mutations";
+import { saveDogIds, getSavedDogIds } from '../utils/localStorage';
 
 const DogSwiper = () => {
 
@@ -29,14 +33,21 @@ const DogSwiper = () => {
     return (
       <section>
         {/* insert header */}
-        <h1>Dinder</h1>
-        <img
-        src={dog && dog[0].url} 
-        alt="A dog"
-        className="dogPic">
-          </img>
-        <p>Breed: {dog && dog[0].breeds[0].name}</p>
-        <Dislike /> <span><Like /></span>
+        
+        {Auth.loggedIn() && (
+          <Container>
+            <Card.Body>
+              <Card.Img src={dog[0].url} alt={`This is a ${dog[0].breeds[0].name}`}></Card.Img>
+              <Card.Title>{dog[0].breeds[0].name}</Card.Title>
+              <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
+              <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
+              <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
+              {/* {Auth.loggedIn() && (
+                
+              )} */}
+            </Card.Body>
+          </Container>
+        )}
         </section>
     )
 };

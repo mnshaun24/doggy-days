@@ -22,3 +22,20 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const SAVE_DOG = gql`
+  mutation saveDog($input: saveDogData) {
+    saveDog(input: $input) {
+      _id
+      name
+      dogCount
+      savedDogs {
+        dogId
+        image
+        breed
+        characteristics
+        life_span
+        weight
+      }
+    }
+  }`;
