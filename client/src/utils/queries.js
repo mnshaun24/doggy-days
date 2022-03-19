@@ -7,7 +7,7 @@ export const GET_ME = gql`
       name
       phoneNumber
       savedDogs {
-        dogId
+        id
         image
         breed
         characteristics
