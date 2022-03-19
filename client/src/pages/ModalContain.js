@@ -23,6 +23,7 @@ const ModalContain = () => {
         show={isOpen}
         onHide={() => setIsOpen(false)}
         aria-labelledby="signup-modal"
+        centered
       >
 
         {/* tab container to do either signup or login component */}
