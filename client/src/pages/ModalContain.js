@@ -30,7 +30,7 @@ const ModalContain = () => {
         <Tab.Container defaultActiveKey="login">
           <Modal.Header closeButton>
             <Modal.Title id="signup-modal">
-              <Nav bg="light" variant="pills">
+              <Nav>
                 <Nav.Item>
                   <Nav.Link eventKey="login">Login</Nav.Link>
                 </Nav.Item>

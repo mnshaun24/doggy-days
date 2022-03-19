@@ -46,6 +46,18 @@ h2 {
   color: white;
 }
 
+.nav-item:active {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
+
+.nav-item:hover {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
+
+/* .nav-item {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%)
+} */
+
 @media (min-width: 320px) {
   body{
     background-position: top 35px left -250px;
