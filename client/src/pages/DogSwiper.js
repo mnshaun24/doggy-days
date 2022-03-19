@@ -9,6 +9,7 @@ import { saveDogIds, getSavedDogIds } from '../utils/localStorage';
 const DogSwiper = () => {
 
     const [savedDogIds, setSavedDogIds] = useState(getSavedDogIds());
+    const [dogPull, setDogPull] = useState([]);
 
     useEffect(() => {
       return () => saveDogIds(savedDogIds);
@@ -37,9 +38,29 @@ const DogSwiper = () => {
       })
     }, []);
   
-    const handleSaveDog = async (id) => {
-     console.log('Hello!') 
-    }
+    const handleSaveDog = async (dogId) => {
+     console.log(dogId);
+     const dogToSave = dogPull.find((dog) => dog[0].id === dogId)
+
+     const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+     if (!token) {
+       return false;
+     }
+
+     try {
+       const response = await saveDog({
+         variables: {
+           input: dogToSave
+         }
+       });
+       console.log(response);
+
+       setSavedDogIds([...savedDogIds, dogToSave.dogId]);
+     } catch (err) {
+       console.error(err);
+     }
+    };
 
     return (
       <section>
