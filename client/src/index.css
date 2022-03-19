@@ -22,11 +22,12 @@ main {
     transform: translateY(-50%);
     text-align: center;
     width: 100%;
+    font-family: 'DM Sans', sans-serif;
 
 }
 
 .dogPic {
-  max-width: 20%;
+  max-width: 70%;
 }
 
 button.btn.btn-outline-light {
