@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from "react-bootstrap";
 
 import DogSwiper from '../pages/DogSwiper';
 import { Link } from "react-router-dom";
@@ -60,9 +61,7 @@ const LoginForm = () => {
             value={userFormData.password}
             onChange={handleInputChange}
           />
-          <button type="submit">Submit
-
-          </button>
+          <Button variant="outline-light" type="submit">Submit</Button>
         </form>
         {error && <div>Login failed</div>}
       </div>

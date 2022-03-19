@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from "react-bootstrap";
 
 import { Link } from 'react-router-dom';
 
@@ -71,9 +72,9 @@ const SignupForm = () => {
           value={userFormData.password}
           onChange={handleInputChange}
         />
-          <button type="submit">Submit
+          <Button className="signupbtn" variant="outline-light" type="submit">Submit
           
-        </button>
+        </Button>
       </form>
       {error && <div>Sign up failed</div>}
     </div>

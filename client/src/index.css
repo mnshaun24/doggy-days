@@ -27,7 +27,7 @@ main {
 }
 
 .dogPic {
-  max-width: 70%;
+  max-width: 90%;
 }
 
 button.btn.btn-outline-light {
@@ -36,6 +36,14 @@ button.btn.btn-outline-light {
 
 .hide{
   display: none;
+}
+
+.modal-content {
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+h2 {
+  color: white;
 }
 
 @media (min-width: 320px) {
