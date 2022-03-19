@@ -46,7 +46,6 @@ const DogSwiper = () => {
     }
   
     const handleSaveDog = async (id) => {
-      console.log(id);
       console.log(dog);
     }
 
