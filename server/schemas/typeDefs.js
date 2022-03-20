@@ -5,6 +5,8 @@ const typeDefs = gql`
         _id: ID
         name: String!
         phoneNumber: String!
+        dogCount: Int
+        savedDogs: [Dog]
     }
     type Auth {
         token: ID!
@@ -21,6 +23,7 @@ const typeDefs = gql`
         characteristics: String
         life_span: String
         weight: String
+        dogId: String
     }
     input saveDogData {
         image: String
@@ -28,6 +31,7 @@ const typeDefs = gql`
         characteristics: String
         life_span: String
         weight: String
+        dogId: String
     }
     type Mutation {
         login(phoneNumber: String!, password: String!): Auth

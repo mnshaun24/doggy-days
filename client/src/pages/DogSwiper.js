@@ -20,6 +20,7 @@ const DogSwiper = () => {
     const [dog, setDog] = useState();
 
     function getDog() {
+
       fetch(url, {
         method: 'GET',
         headers: {
@@ -29,6 +30,7 @@ const DogSwiper = () => {
       })
       .then(res => res.json())
       .then(data => {
+
         setDog(data)
       })
       .catch(function(err) {
@@ -44,8 +46,8 @@ const DogSwiper = () => {
       getDog();
     }
   
-    const handleSaveDog = async (id) => {
-      console.log(dog);
+    const handleSaveDog = async () => {
+      console.log(dog)
     }
 
     return (
@@ -62,7 +64,7 @@ const DogSwiper = () => {
           {Auth.loggedIn() && (
             <>
               <Button 
-              disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog(dog[0].id)}>Save Dog</Button>
+              disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog()}>Save Dog</Button>
               <Button onClick={() => handleNextDog()}>Next</Button>
             </>    
           )}
