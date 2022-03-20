@@ -1,6 +1,8 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+const dogSchema = require('./Dog');
+
 const userSchema = new Schema(
   {
     name: {
@@ -18,8 +20,8 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    // set savedDogs to be an array of data that adheres to the bookSchema
-    // savedDogs: [dogSchema],
+    // set savedDogs to be an array of data that adheres to the dogSchema
+    savedDogs: [dogSchema],
   },
   // set this to use virtual below
   {
@@ -43,6 +45,10 @@ userSchema.pre('save', async function (next) {
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
+
+userSchema.virtual('dogCount').get(function() {
+  return this.savedDogs.length;
+})
 
 const User = model('User', userSchema);
 
