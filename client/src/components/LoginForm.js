@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import DogSwiper from '../pages/DogSwiper';
+// import DogSwiper from '../pages/DogSwiper';
 import { Link } from "react-router-dom";
 
 import { useMutation } from '@apollo/client';
