@@ -25,9 +25,6 @@ main {
 
 }
 
-.dogPic {
-  max-width: 20%;
-}
 
 button.btn.btn-outline-light {
   margin-top: 100px;
@@ -83,6 +80,7 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
+}
 
 @media (min-width: 320px) {
   body{
@@ -91,3 +89,4 @@ input:checked + .slider:before {
   img.logopic{
     height: 300px;
   }
+}

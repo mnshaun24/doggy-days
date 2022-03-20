@@ -29,10 +29,6 @@ const DogSwiper = () => {
   return (
     <section>
       <DinderCard />
-      <Dislike />{" "}
-      <span>
-        <Like />
-      </span>
     </section>
   );
 };
