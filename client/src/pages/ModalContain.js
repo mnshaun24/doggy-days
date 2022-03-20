@@ -13,7 +13,7 @@ const ModalContain = () => {
 
 
   return (
-    <>
+    <div id="modalContain">
     <Button onClick={handleClick}>Login or Sign up here!</Button>
       <Modal
         size="lg"
@@ -49,7 +49,7 @@ const ModalContain = () => {
         </Tab.Container>
       </Modal>
       {/* {isOpen && <SignupForm handleClick={handleClick} />} */}
-    </>
+    </div>
   )
 }
 

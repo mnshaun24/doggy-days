@@ -6,6 +6,8 @@ const DogSwiper = () => {
 
     const url = 'https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1';
     const [dog, setDog] = useState();
+    const [isToggled, setIsToggled] = useState(false);
+
   
     useEffect(() => {
       fetch(url, {
@@ -35,7 +37,9 @@ const DogSwiper = () => {
         alt="A dog"
         className="dogPic">
           </img>
-        <p>Breed: {dog && dog[0].breeds[0].name}</p>
+          <div isToggled={isToggled} onToggle={() => setIsToggled(!isToggled)}>
+          <p>Breed: {dog && dog[0].breeds[0].name}</p>
+          </div>
         <Dislike /> <span><Like /></span>
         </section>
     )
@@ -51,3 +55,4 @@ export default DogSwiper;
     //   <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
     //   <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
     // </div>
+

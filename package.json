@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "apollo-server-express": "^3.6.3",
-    "jwt-decode": "^3.1.2"
+    "jwt-decode": "^3.1.2",
+    "react-tinder-card": "^1.4.5"
   }
 }
