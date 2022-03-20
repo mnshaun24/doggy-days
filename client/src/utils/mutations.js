@@ -30,12 +30,12 @@ export const SAVE_DOG = gql`
       name
       dogCount
       savedDogs {
-        id
         image
         breed
         characteristics
         life_span
         weight
+        dogId
       }
     }
   }`;
