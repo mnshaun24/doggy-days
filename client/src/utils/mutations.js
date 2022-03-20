@@ -38,5 +38,24 @@ export const SAVE_DOG = gql`
         dogId
       }
     }
+
+  }`;
+
+  export const REMOVE_DOG = gql`
+  mutation removeDog($id: ID!) {
+    removeDog(id: $id) {
+      _id
+      name
+      dogCount 
+      savedDogs {
+        id
+        image
+        breed
+        characteristics
+        life_span
+        weight
+      }
+    }
   }
-`;
+  `;
+

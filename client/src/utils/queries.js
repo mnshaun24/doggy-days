@@ -12,6 +12,7 @@ export const GET_ME = gql`
         characteristics
         life_span
         weight
+        dogId
       }
     }
   }`

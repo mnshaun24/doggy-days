@@ -1,10 +1,12 @@
 import React from "react";
 import "./index.css";
+
 import DogSwiper from "./pages/DogSwiper";
 import Layout from "./components/Layout";
 import SavedDogs from "./pages/SavedDogs";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ModalContain from "./pages/ModalContain";
+
 
 import {
   ApolloProvider,
@@ -29,6 +31,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
 
+
         <Routes>
           <Route path="/" element={<ModalContain />} />
             <Route path="/main" element={<Layout />}>
@@ -38,6 +41,7 @@ function App() {
               <Route path="saved" element={<SavedDogs />} />
             </Route>
         </Routes>
+
       </Router>
     </ApolloProvider>
 
