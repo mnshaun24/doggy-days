@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Dislike from "../components/Dislike";
-import Like from "../components/Like";
-import DinderCard from "../components/DinderCard";
 
-const DogSwiper = () => {
+function DinderCard() {
   const url =
     "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1";
   const [dog, setDog] = useState();
@@ -27,14 +24,20 @@ const DogSwiper = () => {
   }, []);
 
   return (
-    <section>
-      <DinderCard />
-      <Dislike />{" "}
-      <span>
-        <Like />
-      </span>
-    </section>
+    <div>
+      <img src={dog && dog[0].url} alt="A dog" className="dogPic"></img>
+      <p>Breed: {dog && dog[0].breeds[0].name}</p>
+    </div>
   );
-};
+}
 
-export default DogSwiper;
+export default DinderCard;
+
+    // <div className="App">
+    //   <h1>Doggy Days</h1>
+    //   <img src={dog && dog[0].url} alt="A dog"></img>
+    //   <p>Breed: {dog && dog[0].breeds[0].name}</p>
+    //   <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
+    //   <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
+    //   <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
+    // </div>

@@ -3,7 +3,7 @@ import Breed from "../components/Breed";
 import Character from "../components/Character";
 import Lifespan from "../components/Lifespan";
 import Weight from "../components/Weight";
-// import Auth from "../utils/auth";
+import Auth from "../utils/auth";
 // import { Nav } from "react-bootstrap";
 
 const Settings = () => {
@@ -22,11 +22,13 @@ const Settings = () => {
       <div>
           <Weight />
       </div>
+      <button  onClick={Auth.logout}>
+      Logout
+      </button>
     </section>
   );
 };
 
 export default Settings;
 
-  /* <div onClick={Auth.logout}>Logout</div> */
 
