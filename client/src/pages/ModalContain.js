@@ -23,13 +23,14 @@ const ModalContain = () => {
         show={isOpen}
         onHide={() => setIsOpen(false)}
         aria-labelledby="signup-modal"
+        centered
       >
 
         {/* tab container to do either signup or login component */}
         <Tab.Container defaultActiveKey="login">
           <Modal.Header closeButton>
             <Modal.Title id="signup-modal">
-              <Nav variant="pills">
+              <Nav>
                 <Nav.Item>
                   <Nav.Link eventKey="login">Login</Nav.Link>
                 </Nav.Item>

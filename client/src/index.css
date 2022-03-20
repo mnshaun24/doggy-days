@@ -46,31 +46,17 @@ h2 {
   color: white;
 }
 
-.nav-pills .nav-link.active {
-  color: #fff;
-  background-color: #9198e5;
+.nav-item:active {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
 }
 
-.nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: white;
-  text-decoration: none;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+.nav-item:hover {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
 }
 
-.nav-link:focus, .nav-link:hover {
-  color: #9198e5;
-}
-
-a:hover {
-  color: #9198e5;
-}
-
-.nav-pills .show>.nav-link {
-  color: #fff;
-  background-color: #9198e5;
-}
+/* .nav-item {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%)
+} */
 
 @media (min-width: 320px) {
   body{
