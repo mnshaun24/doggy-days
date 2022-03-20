@@ -22,11 +22,7 @@ main {
     transform: translateY(-50%);
     text-align: center;
     width: 100%;
-
-}
-
-.dogPic {
-  max-width: 20%;
+    font-family: 'DM Sans', sans-serif;
 }
 
 button.btn.btn-outline-light {
@@ -35,6 +31,22 @@ button.btn.btn-outline-light {
 
 .hide{
   display: none;
+}
+
+.modal-content {
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+h2 {
+  color: white;
+}
+
+.nav-item:active {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+}
+
+.nav-item:hover {
+  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
 }
 
 .switch {
@@ -82,7 +94,9 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);}
+  transform: translateX(26px);
+}
+
 
 @media (min-width: 320px) {
   body{
@@ -92,3 +106,4 @@ input:checked + .slider:before {
     height: 300px;
   }
 }
+
