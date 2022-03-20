@@ -28,6 +28,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+
         <Routes>
           <Route path="/" element={<ModalContain />} />
             <Route path="/main" element={<Layout />}>
@@ -39,6 +40,7 @@ function App() {
         </Routes>
       </Router>
     </ApolloProvider>
+
   );
 }
 export default App;

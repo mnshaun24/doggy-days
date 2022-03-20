@@ -1,4 +1,6 @@
 body {
+  background: linear-gradient(#e66465, #9198e5);
+  height: 100vh;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -12,8 +14,23 @@ body {
       monospace;
   }
   
+main {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+
+}
+
 .dogPic {
   max-width: 20%;
+}
+
+button.btn.btn-outline-light {
+  margin-top: 100px;
 }
 
 .hide{
@@ -66,4 +83,11 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
-}
+
+@media (min-width: 320px) {
+  body{
+    background-position: top 35px left -250px;
+  } 
+  img.logopic{
+    height: 300px;
+  }

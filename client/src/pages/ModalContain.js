@@ -13,8 +13,12 @@ const ModalContain = () => {
 
 
   return (
+  <>
     <div id="modalContain">
-    <Button onClick={handleClick}>Login or Sign up here!</Button>
+    <img className="logopic" src={require('../assets/images/logo.png')} alt="logo"/>
+    </div>
+    <Button variant="outline-light" onClick={handleClick}>Login or Sign up here!</Button>
+
       <Modal
         size="lg"
         show={isOpen}
@@ -39,7 +43,7 @@ const ModalContain = () => {
           <Modal.Body>
             <Tab.Content>
               <Tab.Pane eventKey="login">
-                 <LoginForm handleModalClose={() => setIsOpen(false)} />
+                  <LoginForm handleModalClose={() => setIsOpen(false)} />
               </Tab.Pane>
               <Tab.Pane eventKey="signup">
                 <SignupForm handleModalClose={() => setIsOpen(false)} /> 
@@ -49,7 +53,9 @@ const ModalContain = () => {
         </Tab.Container>
       </Modal>
       {/* {isOpen && <SignupForm handleClick={handleClick} />} */}
-    </div>
+
+    </>
+    
   )
 }
 
