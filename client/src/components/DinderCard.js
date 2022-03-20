@@ -5,6 +5,8 @@ import { useMutation } from "@apollo/client";
 import { SAVE_DOG } from "../utils/mutations";
 import { saveDogIds, getSavedDogIds } from "../utils/localStorage";
 
+
+
 const DinderCard = () => {
   const url =
     "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1";
