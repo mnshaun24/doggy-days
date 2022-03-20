@@ -82,7 +82,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(26px);}
 
 @media (min-width: 320px) {
   body{
@@ -91,3 +91,4 @@ input:checked + .slider:before {
   img.logopic{
     height: 300px;
   }
+}
