@@ -12,10 +12,6 @@ import DinderCard from "../components/DinderCard";
 
 
 const DogSwiper = () => {
-  const url =
-    "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1";
-  const [dog, setDog] = useState();
-
 
   const [savedDogIds, setSavedDogIds] = useState(getSavedDogIds());
 
@@ -59,47 +55,46 @@ const DogSwiper = () => {
     console.log(dog)
   }
 
-return (
-  <section>
+  return (
+    <section>
 
-    {Auth.loggedIn() && (
-      <Container>
-        <Card.Body>
-          <Card.Img src={dog && dog[0].url} alt={`This is a ${dog && dog[0].breeds[0].name}`}></Card.Img>
-          <Card.Title>{dog && dog[0].breeds[0].name}</Card.Title>
-         <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
-           <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
-           <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
-          
+      {Auth.loggedIn() && (
+        <Container>
+          <Card.Body>
+            <Card.Img src={dog && dog[0].url} alt={`This is a ${dog && dog[0].breeds[0].name}`}></Card.Img>
+            <Card.Title>{dog && dog[0].breeds[0].name}</Card.Title>
+            <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
+            <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
+            <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
+
             <>
               <Button
                 disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog()}>Save Dog</Button>
               <Button onClick={() => handleNextDog()}>Next</Button>
             </>
-         
-        </Card.Body>
-      </Container>
-    )}
-  </section>
-)};
 
-export default DogSwiper;
-
-
-
-
-
-  return (
-    <section>
-      <DinderCard />
-
-     <Button
-                disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog()}>Save Dog</Button>
-              <Button onClick={() => handleNextDog()}>Next</Button>
-
+          </Card.Body>
+        </Container>
+      )}
     </section>
-  );
+  )
 };
 
 export default DogSwiper;
+
+
+
+// return (
+//   <section>
+//     <DinderCard />
+
+//     <Button
+//       disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog()}>Save Dog</Button>
+//     <Button onClick={() => handleNextDog()}>Next</Button>
+
+//   </section>
+// );
+// };
+
+// export default DogSwiper;
 
