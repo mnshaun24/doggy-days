@@ -1,18 +1,25 @@
-
-import React from 'react';
+import React from "react";
 import "./index.css";
-import DogSwiper from './pages/DogSwiper';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ModalContain from './pages/ModalContain';
-import SavedDogs from "./pages/SavedDogs";
 
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-import NavBar from './components/navbar';
+import DogSwiper from "./pages/DogSwiper";
+import Layout from "./components/Layout";
+import SavedDogs from "./pages/SavedDogs";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ModalContain from "./pages/ModalContain";
+
+
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  createHttpLink,
+} from "@apollo/client";
+import Settings from "./pages/Settings";
+// import { ApolloServerPluginLandingPageDisabled } from "apollo-server-core";
 
 function App() {
-
   const httpLink = createHttpLink({
-    uri: '/graphql',
+    uri: "/graphql",
   });
 
   const client = new ApolloClient({
@@ -23,16 +30,18 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
-          <NavBar></NavBar>
-          <main>
-            <Routes>
-              <Route exact path="/" element={<ModalContain />} />
-              <Route exact path="/home" element={<DogSwiper />} />
-              <Route exact path="/saved" element={<SavedDogs />} />
-            </Routes>
-          </main>
-        </div>
+
+
+        <Routes>
+          <Route path="/" element={<ModalContain />} />
+            <Route path="/main" element={<Layout />}>
+              <Route index element={<DogSwiper />} />
+              <Route path="settings" element={<Settings />} />
+              <Route path="home" element={<DogSwiper />} />
+              <Route path="saved" element={<SavedDogs />} />
+            </Route>
+        </Routes>
+
       </Router>
     </ApolloProvider>
 

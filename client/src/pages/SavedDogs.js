@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Container, Col, Card, Button } from 'react-bootstrap';
 import {useQuery, useMutation} from '@apollo/client';
@@ -67,6 +68,8 @@ const SavedDogs = () => {
     </section>
     </>
   )
+
+
 }
 
 export default SavedDogs;
