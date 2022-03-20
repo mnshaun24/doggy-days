@@ -9,7 +9,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
   }
   
-  code {
+code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
@@ -23,10 +23,11 @@ main {
     text-align: center;
     width: 100%;
     font-family: 'DM Sans', sans-serif;
-
 }
 
-
+.dogPic {
+  max-width: 90%;
+}
 
 button.btn.btn-outline-light {
   margin-top: 100px;
@@ -35,7 +36,6 @@ button.btn.btn-outline-light {
 .hide{
   display: none;
 }
-
 
 .modal-content {
   background: linear-gradient(#e66465, #9198e5);
@@ -52,10 +52,6 @@ h2 {
 .nav-item:hover {
   background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
 }
-
-/* .nav-item {
-  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%)
-} */
 
 .switch {
   position: relative;
@@ -113,6 +109,5 @@ input:checked + .slider:before {
   img.logopic{
     height: 300px;
   }
-
 }
 
