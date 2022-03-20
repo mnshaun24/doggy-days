@@ -92,9 +92,11 @@ export default DogSwiper;
   return (
     <section>
       <DinderCard />
+
      <Button
                 disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog()}>Save Dog</Button>
               <Button onClick={() => handleNextDog()}>Next</Button>
+
     </section>
   );
 };
