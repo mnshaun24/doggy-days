@@ -110,8 +110,25 @@ input:checked + .slider:before {
 }
 
 
-li {
+ul {
   display: inline-flex;
+  justify-content: center;
+  padding-left: 8%;
+  padding-right: 5%;
+  padding-top: 3%;
+  list-style: none;
+}
+
+img.settings {
+  max-width: 30%;
+}
+
+img.headerlogo {
+  max-width: 30%;
+}
+
+img.circle {
+  max-width: 30%;
 }
 
 img.card-img {
@@ -143,4 +160,12 @@ img.heartpic {
 
 img.arrow {
   max-width: 60px;
+}
+
+img.logopic {
+  margin-top: 10%;
+}
+
+li {
+  text-align: center
 }
