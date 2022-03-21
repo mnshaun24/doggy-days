@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Breed from "../components/Breed";
 import Character from "../components/Character";
 import Lifespan from "../components/Lifespan";
@@ -7,20 +7,41 @@ import Auth from "../utils/auth";
 // import { Nav } from "react-bootstrap";
 
 const Settings = () => {
+
+  const [breed, setBreed] = useState(false);
+  const [character, setCharacter] = useState(false);
+  const [lifeSpan, setLifeSpan] = useState(false);
+  const [weight, setWeight] = useState(false);
+
+
+  function ToggleSetting(settingType) {
+
+        if (settingType === "breed") {
+          setBreed(!breed)
+        } else if (settingType === "character") {
+          setCharacter(!character)
+        } else if (settingType === "lifeSpan") {
+          setLifeSpan(!lifeSpan)
+        } else if (settingType === "weight") {
+          setWeight(!weight)
+        }
+  }
+
+
   return (
     <section>
       {/* toggle switch code used from the following video: https://youtu.be/bztDMD4HSL0 */}
       <div>
-          <Breed />
+          <Breed ToggleSetting={ToggleSetting} />
       </div>
       <div>
-          <Character />
+          <Character ToggleSetting={ToggleSetting} />
       </div>
       <div>
-          <Lifespan />
+          <Lifespan ToggleSetting={ToggleSetting} />
       </div>
       <div>
-          <Weight />
+          <Weight ToggleSetting={ToggleSetting} />
       </div>
       <button  onClick={Auth.logout}>
       Logout

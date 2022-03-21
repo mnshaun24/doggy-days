@@ -4,6 +4,7 @@ import Auth from "../utils/auth";
 import { useMutation } from "@apollo/client";
 import { SAVE_DOG } from "../utils/mutations";
 import { saveDogIds, getSavedDogIds } from "../utils/localStorage";
+import Settings from "../pages/Settings";
 
 
 
@@ -58,10 +59,13 @@ const DinderCard = () => {
               src={dog && dog[0].url}
               alt={`This is a ${dog && dog[0].breeds[0].name}`}
             ></Card.Img>
-            <Card.Title>{dog && dog[0].breeds[0].name}</Card.Title>
+            <Card.Title>
+            {breed && <p>Breed: {dog && dog[0].breeds[0].name} </p> }
             <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
             <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
+
+            </Card.Title>
 
             <>
               <Button
