@@ -7,12 +7,12 @@ export const GET_ME = gql`
       name
       phoneNumber
       savedDogs {
-        id
         image
         breed
         characteristics
         life_span
         weight
+        dogId
       }
     }
   }`

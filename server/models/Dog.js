@@ -15,6 +15,9 @@ const dogSchema = new Schema({
     },
     weight: {
         type: String
+    },
+    dogId: {
+        type: String
     }
 })
 
