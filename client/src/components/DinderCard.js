@@ -64,21 +64,23 @@ const DinderCard = () => {
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    if (!token) {
-      return false;
-    }
+    console.log(dogToSave);
 
-    try {
-      const response = await saveDog({
-        variables: {
-          input: dogToSave
-        }
-      })
-      console.log(dogToSave);
-      setSavedDogIds([...savedDogIds, dogToSave.dogId])
-    } catch (err) {
-      console.log(err)
-    }
+    // if (!token) {
+    //   return false;
+    // }
+
+    // try {
+    //   const response = await saveDog({
+    //     variables: {
+    //       input: dogToSave
+    //     }
+    //   })
+    //   console.log(dogToSave);
+    //   setSavedDogIds([...savedDogIds, dogToSave.dogId])
+    // } catch (err) {
+    //   console.log(err)
+    // }
 
   };
 
@@ -99,7 +101,7 @@ const DinderCard = () => {
             <>
               <Button
                 disabled={savedDogIds?.some(
-                  (savedDogId) => savedDogId === dog[0].id
+                  (savedDogId) => savedDogId === dog && dog[0].id
                 )}
                 onClick={() => handleSaveDog(dog[0].id)}
               > Save Dog
