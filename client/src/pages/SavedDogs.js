@@ -13,6 +13,8 @@ const SavedDogs = () => {
   const [removeDog] = useMutation(REMOVE_DOG);
   const userData = data?.me || [];
 
+  console.log(userData);
+
   const handleDeleteSavedDog = async (id) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
