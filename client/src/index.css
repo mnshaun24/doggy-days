@@ -37,7 +37,10 @@ code {
 .savebtn {
  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
  padding-top: -100px;
- border-style: outset;
+ margin-left: 25%;
+ margin-right: 25%;
+ text-align: center;
+  border-radius: 10px;
 }
 
 div.savebtn {
@@ -163,10 +166,6 @@ p {
   margin-bottom: 1rem;
 }
 
-.savebtn {
-  text-align: center
-}
-
 img.heartpic {
   max-width: 60px;
 }
@@ -183,7 +182,52 @@ li {
   text-align: center
 }
 
+.container {
+  padding-top: 8%;
+}
 
+/* .btn-primary {
+  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+} */
+
+button.arrowbtn {
+  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+button.heartbtn {
+  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+button.arrowbtn:hover {
+  background-image:none !important;
+  background-color:#fff !important;
+  border-color: #fff !important;
+  border: 1px solid #fff;
+}
+
+button.heartbtn:hover {
+  background-image:none !important;
+  background-color:#fff !important;
+  border-color: #fff !important;
+}
+
+button.arrowbtn:focus {
+  background-image:none !important;
+  background-color:#fff !important;
+  border-color: #fff !important;
+}
+
+button.heartbtn:focus {
+  background-image:none !important;
+  background-color:#fff !important;
+  border-color: #fff !important;
+}
 
 @media (min-width: 320px) {
  
