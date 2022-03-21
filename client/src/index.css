@@ -136,3 +136,11 @@ p {
 .savebtn {
   text-align: center
 }
+
+img.heartpic {
+  max-width: 60px;
+}
+
+img.arrow {
+  max-width: 60px;
+}

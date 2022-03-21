@@ -68,9 +68,9 @@ const DogSwiper = () => {
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
 
             <div className="savebtn">
-              <Button variant="outline-secondary"
-                disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog()}>Save Dog</Button>
-              <Button variant="outline-secondary" onClick={() => handleNextDog()}>Next</Button>
+              <Button variant="outline-light"
+                disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog()}><img className="heartpic" src={require('../assets/images/heart.png')} alt="heart" /></Button>
+              <Button variant="outline-light" onClick={() => handleNextDog()}><img className="arrow" src={require('../assets/images/right-arrow.png')} alt="heart" /></Button>
             </div>
 
           </Card.Body>
