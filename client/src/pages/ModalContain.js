@@ -14,11 +14,12 @@ const ModalContain = () => {
 
   return (
   <>
-    <div id="modalContain">
-    <img className="logopic" src={require('../assets/images/logo.png')} alt="logo"/>
-    </div>
+  <div className="mainpage">
+    <h1>Dinder</h1>
+    <br></br>
+     <img className="logopic" src={require('../assets/images/logo.png')} alt="logo"/>
     <Button variant="outline-light" onClick={handleClick}>Login or Sign up here!</Button>
-
+  
       <Modal
         size="lg"
         show={isOpen}
@@ -54,9 +55,9 @@ const ModalContain = () => {
         </Tab.Container>
       </Modal>
       {/* {isOpen && <SignupForm handleClick={handleClick} />} */}
-
-    </>
     
+    </div>
+    </>
   )
 }
 
