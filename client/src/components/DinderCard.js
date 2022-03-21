@@ -12,6 +12,8 @@ const DinderCard = () => {
     "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1";
   const [dog, setDog] = useState();
 
+  const [savedDogs, setSavedDogs] = useState([]);
+
   const [savedDogIds, setSavedDogIds] = useState(getSavedDogIds());
 
   useEffect(() => {
@@ -45,8 +47,38 @@ const DinderCard = () => {
     getDog();
   };
 
-  const handleSaveDog = async () => {
-    console.log(dog);
+  const handleSaveDog = async (doggyId) => {
+    const dogData = dog.map(()=> ({
+      image: dog[0].url,
+      breed: dog[0].breeds[0].name,
+      characteristics: dog[0].breeds[0].temperament,
+      life_span: dog[0].breeds[0].life_span,
+      weight: dog[0].breeds[0].weight.imperial,
+      dogId: dog[0].id
+    }))
+
+    setSavedDogs(dogData);
+    console.log(savedDogs);
+
+    const dogToSave = savedDogs.find((dog) => dog[0].id === doggyId);
+
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const response = await saveDog({
+        variables: {
+          input: dogToSave
+        }
+      })
+      console.log(dogToSave);
+      setSavedDogIds([...savedDogIds, dogToSave.dogId])
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -68,9 +100,8 @@ const DinderCard = () => {
                 disabled={savedDogIds?.some(
                   (savedDogId) => savedDogId === dog[0].id
                 )}
-                onClick={() => handleSaveDog()}
-              >
-                Save Dog
+                onClick={() => handleSaveDog(dog[0].id)}
+              > Save Dog
               </Button>
               <Button onClick={() => handleNextDog()}>Next</Button>
             </>
