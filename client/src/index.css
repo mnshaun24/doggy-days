@@ -29,8 +29,40 @@ code {
 }
 
 button.btn.btn-outline-light {
-  margin-top: 100px;
+  /* margin-top: 100px; */
 }
+
+.logoutbtn {
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 10%;
+}
+
+.savebtn {
+ /* margin-top: -65px; */
+ /* box-shadow: 0px 12px 12px 0px; */
+ box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+ padding-top: -100px;
+ border-style: outset;
+}
+
+div.savebtn {
+  padding-top: -200px;
+}
+
+.settingspage {
+  text-align: center;
+  /* position: relative; */
+  /* margin-top: 20%; */
+  padding-top: 20%;
+  /* padding-bottom: 50%; */
+}
+
+.settingspage div {
+  padding-bottom: 1%;
+}
+/* .savebtn img {
+  border-style: outset;
+} */
 
 .hide{
   display: none;
@@ -71,7 +103,6 @@ h2 {
   position: absolute;
   cursor: pointer;
   border-radius: 34px;
-
   top: 0;
   left: 0;
   right: 0;
@@ -138,16 +169,20 @@ img.card-img {
 .card-body {
   background: white;
   border-radius: 25px;
+  box-shadow: 12px 12px 12px 12px;
 }
 
 .card-title.h5 {
   margin: 15px;
+  border-style: outset;
+  text-align: center;
 }
 
 p {
   padding: 5px;
   padding-left: 15px;
   margin-bottom: 1rem;
+  /* border-style: outset; */
 }
 
 .savebtn {

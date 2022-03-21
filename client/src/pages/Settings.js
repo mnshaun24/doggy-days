@@ -4,11 +4,11 @@ import Character from "../components/Character";
 import Lifespan from "../components/Lifespan";
 import Weight from "../components/Weight";
 import Auth from "../utils/auth";
-// import { Nav } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 const Settings = () => {
   return (
-    <section>
+    <section className="settingspage">
       {/* toggle switch code used from the following video: https://youtu.be/bztDMD4HSL0 */}
       <div>
           <Breed />
@@ -22,9 +22,9 @@ const Settings = () => {
       <div>
           <Weight />
       </div>
-      <button  onClick={Auth.logout}>
+      <Button onClick={Auth.logout} variant="outline-light" className="logoutbtn">
       Logout
-      </button>
+      </Button>
     </section>
   );
 };

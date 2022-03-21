@@ -62,7 +62,7 @@ const DogSwiper = () => {
         <Container>
           <Card.Body>
             <Card.Img src={dog && dog[0].url} alt={`This is a ${dog && dog[0].breeds[0].name}`}></Card.Img>
-            <Card.Title>{dog && dog[0].breeds[0].name}</Card.Title>
+            <Card.Title><h5>{dog && dog[0].breeds[0].name}</h5></Card.Title>
             <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
             <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
