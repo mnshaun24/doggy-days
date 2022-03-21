@@ -13,50 +13,51 @@ const ModalContain = () => {
 
 
   return (
-  <>
-  <div className="mainpage">
-    <h1>Dinder</h1>
-    <br></br>
-     <img className="logopic" src={require('../assets/images/logo.png')} alt="logo"/>
-    <Button variant="outline-light" onClick={handleClick}>Login or Sign up here!</Button>
-  
-      <Modal
-        size="lg"
-        show={isOpen}
-        onHide={() => setIsOpen(false)}
-        aria-labelledby="signup-modal"
-        centered
-      >
+    <>
+      <div className="mainpage">
 
-        {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey="login">
-          <Modal.Header closeButton>
-            <Modal.Title id="signup-modal">
-              <Nav>
-                <Nav.Item>
-                  <Nav.Link eventKey="login">Login</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="signup">Sign Up</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
-              <Tab.Pane eventKey="login">
+        <h1>Dinder</h1>
+      
+        <img className="logopic" src={require('../assets/images/logo.png')} alt="logo" />
+        <Button variant="outline-light" onClick={handleClick}>Login or Sign up here!</Button>
+
+        <Modal
+          size="lg"
+          show={isOpen}
+          onHide={() => setIsOpen(false)}
+          aria-labelledby="signup-modal"
+          centered
+        >
+
+          {/* tab container to do either signup or login component */}
+          <Tab.Container defaultActiveKey="login">
+            <Modal.Header closeButton>
+              <Modal.Title id="signup-modal">
+                <Nav>
+                  <Nav.Item>
+                    <Nav.Link eventKey="login">Login</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="signup">Sign Up</Nav.Link>
+                  </Nav.Item>
+                </Nav>
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Tab.Content>
+                <Tab.Pane eventKey="login">
                   <LoginForm handleModalClose={() => setIsOpen(false)} />
-              </Tab.Pane>
-              <Tab.Pane eventKey="signup">
-                <SignupForm handleModalClose={() => setIsOpen(false)} /> 
-              </Tab.Pane>
-            </Tab.Content>
-          </Modal.Body>
-        </Tab.Container>
-      </Modal>
-      {/* {isOpen && <SignupForm handleClick={handleClick} />} */}
-    
-    </div>
+                </Tab.Pane>
+                <Tab.Pane eventKey="signup">
+                  <SignupForm handleModalClose={() => setIsOpen(false)} />
+                </Tab.Pane>
+              </Tab.Content>
+            </Modal.Body>
+          </Tab.Container>
+        </Modal>
+        {/* {isOpen && <SignupForm handleClick={handleClick} />} */}
+
+      </div>
     </>
   )
 }
