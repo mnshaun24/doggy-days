@@ -99,7 +99,7 @@ h2 {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: grey;
+  background-color: rgba(0, 0, 0, 0.5);
   transition: 0.4s;
 }
 
@@ -116,7 +116,7 @@ h2 {
 }
 
 input:checked + .slider {
-  background-color: blue;
+  background-color: rgba(70, 65, 65, 0.5);
 }
 
 input:checked + .slider:before {
