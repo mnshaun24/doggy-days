@@ -38,7 +38,6 @@ export const SAVE_DOG = gql`
         dogId
       }
     }
-
   }`;
 
   export const REMOVE_DOG = gql`

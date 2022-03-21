@@ -48,6 +48,7 @@ const DinderCard = () => {
   };
 
   const handleSaveDog = async (dogId) => {
+    console.log(dogId);
     const dogData = dog.map(()=> ({
       image: dog[0].url,
       breed: dog[0].breeds[0].name,
@@ -64,23 +65,24 @@ const DinderCard = () => {
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    console.log(dogToSave);
+    console.log(savedDogIds);
 
-    // if (!token) {
-    //   return false;
-    // }
+    if (!token) {
+      return false;
+    }
 
-    // try {
-    //   const response = await saveDog({
-    //     variables: {
-    //       input: dogToSave
-    //     }
-    //   })
-    //   console.log(dogToSave);
-    //   setSavedDogIds([...savedDogIds, dogToSave.dogId])
-    // } catch (err) {
-    //   console.log(err)
-    // }
+    try {
+      const response = await saveDog({
+        variables: {
+          input: dogToSave
+        }
+      })
+      console.log(dogToSave);
+      setSavedDogIds([...savedDogIds, dogToSave.dogId]) 
+      console.log(savedDogIds);
+    } catch (err) {
+      console.log(err)
+    }
 
   };
 
