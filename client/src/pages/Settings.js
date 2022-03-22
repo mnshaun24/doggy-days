@@ -5,7 +5,6 @@ import Lifespan from "../components/Lifespan";
 import Weight from "../components/Weight";
 import Auth from "../utils/auth";
 
-import {bubble as Menu} from "react-burger-menu";
 
 import { Button } from "react-bootstrap";
 
@@ -43,31 +42,26 @@ const Settings = () => {
 
 
   return (
-
-    <div id="outer-container">
-    <Menu pageWrapId={ "page-wrap" } outerContainerId={ "outer-container"}>
-    <div id="page-wrap" className="settingspage">
+<section>
 
       {/* toggle switch code used from the following video: https://youtu.be/bztDMD4HSL0 */}
-      <div>
+      <div className="breedtog">
           <Breed ToggleSetting={ToggleSetting} />
       </div>
-      <div>
+      <div className="chartog" >
           <Character ToggleSetting={ToggleSetting} />
       </div>
-      <div>
+      <div className="lifetog">
           <Lifespan ToggleSetting={ToggleSetting} />
       </div>
-      <div>
+      <div className="weighttog">
           <Weight ToggleSetting={ToggleSetting} />
       </div>
       <Button onClick={Auth.logout} variant="outline-light" className="logoutbtn">
       Logout
 
       </Button>
-    </div>
-    </Menu>
-    </div>
+      </section>
 
   );
 };

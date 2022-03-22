@@ -1,5 +1,7 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import {bubble as Menu} from "react-burger-menu";
+
 
 import Settings from "../pages/Settings";
 
@@ -12,10 +14,17 @@ const Layout = () => {
 
         <nav>
             <ul>
-                <li>
+                <Menu>
+                    <div>
                     <Settings>Settings</Settings>
-                {/* </li> <Link to="settings"><img className="settings" src={require('../assets/images/settings.png')} alt="settings" /></Link> */}
-                    </li>
+                    </div>
+            </Menu>
+              
+
+           
+                 {/* <Link to="settings"><img className="settings" src={require('../assets/images/settings.png')} alt="settings" /></Link> */}
+                        
+                    
                     <li>
                     <Link to="home"><img className="headerlogo" src={require('../assets/images/logo.png')} alt="logo" /></Link>
                     </li>

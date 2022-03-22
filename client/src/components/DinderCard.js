@@ -6,7 +6,8 @@ import { SAVE_DOG } from "../utils/mutations";
 import { saveDogIds, getSavedDogIds } from "../utils/localStorage";
 
 
-// const DinderCard = ({ breed, character, lifespan, weight }) => {
+// const DinderStuff = ({ breed, character, lifespan, weight }) => {
+// }
 
 const DinderCard = () => {
 
