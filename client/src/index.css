@@ -107,7 +107,12 @@ h2 {
   display: inline-block;
   width: 60px;
   height: 34px;
-  margin-left: 20px;
+  margin-left: 145px;
+  justify-content: flex-end;
+}
+
+label.switch {
+  display: inline-block;
 }
 
 .switch input {
@@ -138,10 +143,12 @@ h2 {
   background-color: white;
   transition: 0.4s;
   border-radius: 50%;
+  justify-content: right;
 }
 
 input:checked + .slider {
   background-color: rgba(70, 65, 65, 0.5);
+  justify-content: right;
 }
 
 input:checked + .slider:before {
@@ -180,9 +187,10 @@ img.card-img {
 
 
 p {
-  padding: 5px;
   padding-left: 15px;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 /* img.heartpic, img.arrow {
@@ -220,26 +228,23 @@ button.heartbtn.btn.btn-primary {
 }
 
 
-button.arrowbtn.btn.btn-primary {
-  margin-right: 20%;
+/* button.arrowbtn.btn.btn-primary {
+  /* margin-right: 20%; */
   /* padding-right: 20%; */
-  align-items: center;
-  justify-content: center;
-}
+
 
 button.arrowbtn, button.heartbtn {
   box-shadow: 0 0 10px rgba(0, 0, 0, 1);
-  /* padding-top: -100px; */
- /* margin-left: 25%;
-  margin-right: 25%;
- text-align: center; */
- border-radius: 200px;
- display: inline-flex;
+  height: 60px;
+  width: 80px;
+  border-radius: 50%;
 }
 
 div.saveBtn {
   display: inline-flex;
   justify-content: center;
+  margin-left: 25%;
+  margin-top: 15px;
 }
 
 button.arrowbtn, button.heartbtn {
@@ -319,7 +324,7 @@ button.arrowbtn:focus, button.heartbtn:focus {
   }
  
   img.heartpic, img.arrow {
-    max-width: 30%;
+   max-width: 100%;
   }
 
   .mainpage {
