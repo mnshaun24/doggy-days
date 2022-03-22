@@ -63,7 +63,7 @@ code {
   margin-top: 10%;
 }
 
-.savebtn {
+/* .savebtn {
  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
  padding-top: -100px;
  margin-left: 25%;
@@ -71,7 +71,7 @@ code {
  text-align: center;
  border-radius: 10px;
  display: inline-flex;
-}
+} */
 
 /* div.savebtn {
   padding-top: -200px;
@@ -175,7 +175,9 @@ img.card-img {
   margin: 15px;
   border-style: outset;
   text-align: center;
-}
+  padding-top: 3%;
+} 
+
 
 p {
   padding: 5px;
@@ -183,9 +185,9 @@ p {
   margin-bottom: 1rem;
 }
 
-img.heartpic, img.arrow {
+/* img.heartpic, img.arrow {
   max-width: 30%;
-}
+} */
 
 img.logopic {
   margin-top: 10%;
@@ -210,10 +212,41 @@ button:active {
   border: transparent;
 }
 
+button.heartbtn.btn.btn-primary {
+  margin-right: 20%;
+  /* padding-right: 20%; */
+  align-items: center;
+  justify-content: center;
+}
+
+
+button.arrowbtn.btn.btn-primary {
+  margin-right: 20%;
+  /* padding-right: 20%; */
+  align-items: center;
+  justify-content: center;
+}
+
+button.arrowbtn, button.heartbtn {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  /* padding-top: -100px; */
+ /* margin-left: 25%;
+  margin-right: 25%;
+ text-align: center; */
+ border-radius: 200px;
+ display: inline-flex;
+}
+
+div.saveBtn {
+  display: inline-flex;
+  justify-content: center;
+}
+
 button.arrowbtn, button.heartbtn {
   color: #fff;
   background-color: #fff;
   border-color: #fff;
+
 }
 
 button.arrowbtn:hover, button.heartbtn:hover {
@@ -286,7 +319,7 @@ button.arrowbtn:focus, button.heartbtn:focus {
   }
  
   img.heartpic, img.arrow {
-    max-width: 80%;
+    max-width: 30%;
   }
 
   .mainpage {
