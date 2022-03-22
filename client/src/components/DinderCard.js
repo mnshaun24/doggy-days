@@ -4,10 +4,12 @@ import Auth from "../utils/auth";
 import { useMutation } from "@apollo/client";
 import { SAVE_DOG } from "../utils/mutations";
 import { saveDogIds, getSavedDogIds } from "../utils/localStorage";
+// import Settings from "../pages/Settings";
 
 
-const DinderStuff = ({ breed, character, lifespan, weight }) => {
-}
+// const DinderStuff = ({ breed, character, lifespan, weight }) => {
+// }
+
 
 const DinderCard = () => {
 
@@ -52,6 +54,7 @@ const DinderCard = () => {
 
   const handleSaveDog = async () => {
     console.log(dog);
+    getDog();
   };
 
   return (

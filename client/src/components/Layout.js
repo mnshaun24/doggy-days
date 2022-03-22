@@ -1,9 +1,8 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import {bubble as Menu} from "react-burger-menu";
-
-
 import Settings from "../pages/Settings";
+import { ToggleSetting } from "../pages/Settings";
 
 import Nav from 'react-bootstrap/Nav';
 
