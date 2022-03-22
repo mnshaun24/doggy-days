@@ -5,7 +5,6 @@ import Lifespan from "../components/Lifespan";
 import Weight from "../components/Weight";
 import Auth from "../utils/auth";
 
-import {bubble as Menu} from "react-burger-menu";
 
 import { Button } from "react-bootstrap";
 
@@ -43,10 +42,7 @@ const Settings = () => {
 
 
   return (
-
-    <div id="outer-container">
-    <Menu pageWrapId={ "page-wrap" } outerContainerId={ "outer-container"}>
-    <div id="page-wrap" className="settingspage">
+<section>
 
       {/* toggle switch code used from the following video: https://youtu.be/bztDMD4HSL0 */}
       <div>
@@ -65,9 +61,7 @@ const Settings = () => {
       Logout
 
       </Button>
-    </div>
-    </Menu>
-    </div>
+      </section>
 
   );
 };
