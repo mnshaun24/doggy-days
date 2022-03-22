@@ -53,6 +53,7 @@ const DinderCard = () => {
         <Container>
           <Card.Body>
             <Card.Img
+              className="apiImages"
               src={dog && dog[0].url}
               alt={`This is a ${dog && dog[0].breeds[0].name}`}
             ></Card.Img>
