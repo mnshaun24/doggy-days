@@ -4,9 +4,11 @@ import Character from "../components/Character";
 import Lifespan from "../components/Lifespan";
 import Weight from "../components/Weight";
 import Auth from "../utils/auth";
+
 import {bubble as Menu} from "react-burger-menu";
 
-// import { Nav } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+
 
 const Settings = () => {
 
@@ -41,9 +43,11 @@ const Settings = () => {
 
 
   return (
+
     <div id="outer-container">
     <Menu pageWrapId={ "page-wrap" } outerContainerId={ "outer-container"}>
-    <div id="page-wrap">
+    <div id="page-wrap" className="settingspage">
+
       {/* toggle switch code used from the following video: https://youtu.be/bztDMD4HSL0 */}
       <div>
           <Breed ToggleSetting={ToggleSetting} />
@@ -57,12 +61,14 @@ const Settings = () => {
       <div>
           <Weight ToggleSetting={ToggleSetting} />
       </div>
-      <button  onClick={Auth.logout}>
+      <Button onClick={Auth.logout} variant="outline-light" className="logoutbtn">
       Logout
-      </button>
+
+      </Button>
     </div>
     </Menu>
     </div>
+
   );
 };
 

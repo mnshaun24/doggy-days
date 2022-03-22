@@ -7,6 +7,9 @@ import { saveDogIds, getSavedDogIds } from "../utils/localStorage";
 
 
 const DinderCard = ({ breed, character, lifespan, weight }) => {
+
+const DinderCard = () => {
+
   const url =
     "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1";
   const [dog, setDog] = useState();
@@ -56,26 +59,25 @@ const DinderCard = ({ breed, character, lifespan, weight }) => {
         <Container>
           <Card.Body>
             <Card.Img
+              className="apiImages"
               src={dog && dog[0].url}
               alt={`This is a ${dog && dog[0].breeds[0].name}`}
             ></Card.Img>
+
             <Card.Title>
-            <p>Breed: {dog && dog[0].breeds[0].name} </p> 
+            <h5>Breed: {dog && dog[0].breeds[0].name}<h5> 
+
             <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
             <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
             </Card.Title>
 
             <>
-              <Button
-                disabled={savedDogIds?.some(
-                  (savedDogId) => savedDogId === dog[0].id
-                )}
-                onClick={() => handleSaveDog()}
-              >
-                Save Dog
-              </Button>
-              <Button onClick={() => handleNextDog()}>Next</Button>
+            <div className="savebtn">
+              <Button className="heartbtn"
+                disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog()}><img className="heartpic" src={require('../assets/images/heart.png')} alt="heart" /></Button>
+              <Button className="arrowbtn" onClick={() => handleNextDog()}><img className="arrow" src={require('../assets/images/right-arrow.png')} alt="arrow" /></Button>
+            </div>
             </>
           </Card.Body>
         </Container>
