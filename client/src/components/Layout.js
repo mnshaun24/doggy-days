@@ -10,7 +10,7 @@ const Layout = () => {
   return (
     <>
       <nav>
-        <ul>
+        {/* <ul> */}
           <Menu>
             <div>
               <Settings>Settings</Settings>
@@ -18,7 +18,7 @@ const Layout = () => {
           </Menu>
 
           {/* <Link to="settings"><img className="settings" src={require('../assets/images/settings.png')} alt="settings" /></Link> */}
-
+{/* 
           <li>
             <Link to="home">
               <img
@@ -37,7 +37,7 @@ const Layout = () => {
               />
             </Link>
           </li>
-        </ul>
+        </ul> */}
       </nav>
 
       <Outlet />

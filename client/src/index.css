@@ -1,16 +1,13 @@
 * {
   margin: 0;
-  background-size:contain;
-  bottom: 0;
-  /* padding: 0; */
+  padding: 0;
+  /* background-size: cover; */
+ 
 }
 
-html {
-  background-size: cover;
-  height: 100%;
-  /* width: 100%;
-  bottom: 0; */
-  }
+/* html {
+  margin-top: 0px;
+} */
 
 body {
   background: linear-gradient(#e66465, #9198e5);
@@ -36,48 +33,22 @@ code {
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    /* text-align: center;
-    align-content: center;
-    justify-content: center; */
     font-family: 'DM Sans', sans-serif;
 }
 
-/* .dogPic {
-  max-width: 90%;
-} */
-
-/* .login-signupbtn {
-  margin-top: 100%;
-} */
-
-.apiImages {
-  display: block;
-  justify-content: center;
-  /* max-height: 400px; */
-  max-width: 300px;
-  /* width: 50px; */
-  /* height: 300px; */
-  margin-left: 100px;
+.cardpage {
+  margin-top: 15%;
 }
+
+/* .apiImages {
+  display:block;
+  
+} */
 
 .logoutbtn {
   font-family: 'DM Sans', sans-serif;
   margin-top: 10%;
 }
-
-/* .savebtn {
- box-shadow: 0 0 20px rgba(0, 0, 0, 1);
- padding-top: -100px;
- margin-left: 25%;
- margin-right: 25%;
- text-align: center;
- border-radius: 10px;
- display: inline-flex;
-} */
-
-/* div.savebtn {
-  padding-top: -200px;
-} */
 
 .settingspage {
   text-align: center;
@@ -167,7 +138,8 @@ ul {
 }
 
  img.headerlogo, img.circle {
-  max-width: 20%;
+  max-width: 50%;
+  margin: -50px 50px 50px 0px;
 }
 
 img.card-img {
@@ -180,11 +152,6 @@ img.card-img {
   box-shadow: 5px 5px 12px 1px;
 }
 
-div.card-body img {
-  align-items: center;
-  text-align: center;
-  margin-left: 100px;
-}
 .card-title.h5 {
   margin: 15px;
   border-style: outset;
@@ -192,17 +159,12 @@ div.card-body img {
   padding-top: 3%;
 } 
 
-
 p {
   padding-left: 15px;
   margin-bottom: 0rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
-
-/* img.heartpic, img.arrow {
-  max-width: 30%;
-} */
 
 img.logopic {
   margin-top: 10%;
@@ -217,7 +179,6 @@ li {
   padding-top: 8%;
 }
 
-
 button.arrowbtn.btn.btn-primary:visited {
  border: none;
  border-color: #fff;
@@ -229,18 +190,14 @@ button:active {
 
 button.heartbtn.btn.btn-primary {
   margin-right: 20%;
-  /* padding-right: 20%; */
   align-items: center;
   justify-content: center;
 }
 
-
-/* button.arrowbtn.btn.btn-primary {
-  /* margin-right: 20%; */
-  /* padding-right: 20%; */
-
-
 button.arrowbtn, button.heartbtn {
+  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 1);
   height: 60px;
   width: 80px;
@@ -254,25 +211,11 @@ div.saveBtn {
   margin-top: 15px;
 }
 
-button.arrowbtn, button.heartbtn {
-  color: #fff;
-  background-color: #fff;
-  border-color: #fff;
-
-}
-
-button.arrowbtn:hover, button.heartbtn:hover {
-  background-image:none !important;
-  background-color:#fff !important;
-  border-color: #fff !important;
-  border: 1px solid #fff;
-}
-
+button.arrowbtn:hover, button.heartbtn:hover, 
 button.arrowbtn:focus, button.heartbtn:focus {
   background-image:none !important;
   background-color:#fff !important;
   border-color: #fff !important;
-  border: none;
 }
 
 /* Position and sizing of burger button */
@@ -329,12 +272,19 @@ button.arrowbtn:focus, button.heartbtn:focus {
   .apiImages {
     display: block;
     justify-content: center;
-    /* max-height: 400px; */
-    max-width: 300px;
-    /* width: 50px; */
-    /* height: 300px; */
+    height: min-content;
     margin-left: 100px;
   }
+
+  .cardpage {
+    margin-top: 10%;
+  
+  }
+
+  /* img.heartpic, img.arrow, 
+  button.heartbtn, button.arrowbtn {
+    margin-left: 10px;
+   } */
 }
 
 @media (max-width: 768px) {
@@ -352,7 +302,9 @@ button.arrowbtn:focus, button.heartbtn:focus {
 
   .apiImages {
     margin-left: 0px;
+    height:fit-content;
   }
+  
   .mainpage {
     margin: 0;
     position: absolute;
@@ -365,5 +317,9 @@ button.arrowbtn:focus, button.heartbtn:focus {
 
   .login-signupbtn {
     margin-top: 20%;
+  }
+
+  .cardpage {
+    margin-top: 25%;
   }
 }
