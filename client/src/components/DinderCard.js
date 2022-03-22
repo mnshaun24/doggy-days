@@ -48,7 +48,7 @@ const DinderCard = () => {
   };
 
   const handleSaveDog = async (dogId) => {
-    console.log(dogId);
+
     const dogData = dog.map(()=> ({
       image: dog[0].url,
       breed: dog[0].breeds[0].name,
@@ -78,8 +78,8 @@ const DinderCard = () => {
         }
       })
       console.log(dogToSave);
+      console.log(response);
       setSavedDogIds([...savedDogIds, dogToSave.dogId]) 
-      console.log(savedDogIds);
     } catch (err) {
       console.log(err)
     }
