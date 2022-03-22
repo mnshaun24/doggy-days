@@ -24,13 +24,8 @@ export const ADD_USER = gql`
 `;
 
 export const SAVE_DOG = gql`
-  mutation saveDog($input: saveDogData) {
-    saveDog(input: $input) {
-      _id
-      name
-      phoneNumber
-      dogCount
-      savedDogs {
+  mutation saveDog($image: String) {
+    saveDog(image: $image) {
         image
         breed
         characteristics
@@ -38,8 +33,7 @@ export const SAVE_DOG = gql`
         weight
         dogId
       }
-    }
-  }`;
+    }`;
 
   export const REMOVE_DOG = gql`
   mutation removeDog($id: ID!) {

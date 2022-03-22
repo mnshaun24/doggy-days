@@ -3,7 +3,9 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type Query {
         me: User
+        dogs(breed: String): [Dog]        
     }
+
     type User {
         _id: ID
         name: String!
@@ -39,7 +41,7 @@ const typeDefs = gql`
     type Mutation {
         login(phoneNumber: String!, password: String!): Auth
         addUser(name: String!, phoneNumber: String!, password: String!): Auth
-        saveDog(input: saveDogData): User
+        saveDog(breed: String): Dog
     }
 `;
 

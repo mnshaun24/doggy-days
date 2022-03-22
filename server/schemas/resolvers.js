@@ -1,4 +1,4 @@
-const { User } = require("../models");
+const { User, Dog } = require("../models");
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
 
@@ -23,7 +23,12 @@ const resolvers = {
         user: async (parent, { phoneNumber }) => {
             return User.findOne({ phoneNumber })
             .select('-__v -password')
-        }
+        },
+
+        dogs: async (parent, { breed }) => {
+            const params = breed ? { breed } : {};
+            return Dog.find(params).sort({ createdAt: -1 });
+          },
     },
     Mutation: {
         addUser: async (parent, args) => {
@@ -48,13 +53,13 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
+
         saveDog: async (parent, args, context) => {
-            console.log(context.user, args, 'save dog please be working')
             if(context.user) {
-                const updateUser = await User.findByIdAndUpdate(
-                    {_id: context.user._id},
-                    {$addToSet: {savedDogs: args.input}},
-                    {new: true}
+                const updateUser = await User.findByIdAndUpdate(               
+                    { userId: context.User.phoneNumber},
+                    { $push: { savedDogs: args.breed } },
+                    { new: true}
                 )
                 return updateUser;
             }

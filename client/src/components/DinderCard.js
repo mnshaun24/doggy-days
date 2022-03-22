@@ -48,7 +48,7 @@ const DinderCard = () => {
   };
 
   const handleSaveDog = async (dogId) => {
-
+    console.log(dogId, "dogId log");
     const dogData = dog.map(()=> ({
       image: dog[0].url,
       breed: dog[0].breeds[0].name,
@@ -59,27 +59,29 @@ const DinderCard = () => {
     }))
 
     setSavedDogs(dogData);
-    console.log(savedDogs);
+    console.log(savedDogs, "savedDogs log");
 
-    const dogToSave = savedDogs.find(() => dog[0].id === dogId);
+    const dogToSave = dogData.find(() => dog[0].id === dogId);
+
+    console.log(dogToSave, "dogtosave log")
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    console.log(savedDogIds);
+    console.log(savedDogIds, "savedDogIds log");
 
     if (!token) {
       return false;
     }
 
     try {
-      const response = await saveDog({
+      await saveDog({
         variables: {
-          input: dogToSave
+          image: "test string"
         }
       })
-      console.log(dogToSave);
-      console.log(response);
+      console.log(dogToSave, "dogtosave inside try");
       setSavedDogIds([...savedDogIds, dogToSave.dogId]) 
+      console.log(savedDogIds, "saveddogids inside try");
     } catch (err) {
       console.log(err)
     }
