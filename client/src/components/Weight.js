@@ -1,14 +1,14 @@
 import React from "react";
 
-function Weight(weightToggled, weightOnToggle) {
+function Weight({ ToggleSetting }) {
   return (
     <div>
-      Attribute 4
+      Weight
       <label className="switch">
         <input
           type="checkbox"
-          weightToggled={weightToggled}
-          weightOnToggle={weightOnToggle}
+          onChange={() => ToggleSetting("weight")}
+
         />
         <span className="slider" />
       </label>

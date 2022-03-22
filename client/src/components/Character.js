@@ -1,14 +1,14 @@
 import React from "react";
 
-function Character(characterToggled, characterOnToggle) {
+function Character({ ToggleSetting }) {
   return (
     <div>
       Characteristics
       <label className="switch">
         <input
           type="checkbox"
-          charToggled={characterToggled}
-          charOnToggle={characterOnToggle}
+          onChange={() => ToggleSetting("character")}
+
         />
         <span className="slider" />
       </label>

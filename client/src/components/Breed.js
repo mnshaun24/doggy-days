@@ -1,14 +1,13 @@
 import React from "react";
 
-function Breed(breedToggled, breedOnToggle) {
+function Breed({ ToggleSetting }) {
   return (
     <div>
       Breed
       <label className="switch">
         <input
           type="checkbox"
-          breedToggled={breedToggled}
-          breedOnToggle={breedOnToggle}
+          onChange={() => ToggleSetting("breed")}
         />
         <span className="slider" />
       </label>

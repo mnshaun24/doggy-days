@@ -1,14 +1,14 @@
 import React from "react";
 
-function Lifespan(lifeToggled, lifeOnToggle) {
+function Lifespan({ ToggleSetting }) {
   return (
     <div>
       Life Span
       <label className="switch">
         <input
           type="checkbox"
-          lifeToggled={lifeToggled}
-          lifeOnToggle={lifeOnToggle}
+          onChange={() => ToggleSetting("lifeSpan")}
+
         />
         <span className="slider" />
       </label>
