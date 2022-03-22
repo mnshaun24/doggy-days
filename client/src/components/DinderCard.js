@@ -6,7 +6,7 @@ import { SAVE_DOG } from "../utils/mutations";
 import { saveDogIds, getSavedDogIds } from "../utils/localStorage";
 
 
-const DinderCard = ({ breed, character, lifespan, weight }) => {
+// const DinderCard = ({ breed, character, lifespan, weight }) => {
 
 const DinderCard = () => {
 
@@ -61,17 +61,13 @@ const DinderCard = () => {
             <Card.Img
               className="apiImages"
               src={dog && dog[0].url}
-              alt={`This is a ${dog && dog[0].breeds[0].name}`}
-            ></Card.Img>
-
+              alt={`This is a ${dog && dog[0].breeds[0].name}`}></Card.Img>
             <Card.Title>
-            <h5>Breed: {dog && dog[0].breeds[0].name}<h5> 
-
+            <h5>Breed: {dog && dog[0].breeds[0].name}</h5> 
             <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
             <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
             </Card.Title>
-
             <>
             <div className="savebtn">
               <Button className="heartbtn"

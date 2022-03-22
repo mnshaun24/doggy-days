@@ -14,13 +14,8 @@ const Layout = () => {
             <ul>
                 <li>
                     <Settings>Settings</Settings>
-                </li>
-              
-
-           
-//                     <Link to="settings"><img className="settings" src={require('../assets/images/settings.png')} alt="settings" /></Link>
-                        
-                    
+                {/* </li> <Link to="settings"><img className="settings" src={require('../assets/images/settings.png')} alt="settings" /></Link> */}
+                    </li>
                     <li>
                     <Link to="home"><img className="headerlogo" src={require('../assets/images/logo.png')} alt="logo" /></Link>
                     </li>
