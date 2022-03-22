@@ -19,7 +19,7 @@ const ModalContain = () => {
         <h1>Dinder</h1>
       
         <img className="logopic" src={require('../assets/images/logo.png')} alt="logo" />
-        <Button variant="outline-light" onClick={handleClick}>Login or Sign up here!</Button>
+        <Button variant="outline-light" className="login-signupbtn"onClick={handleClick}>Login or Sign up here!</Button>
 
         <Modal
           size="lg"
