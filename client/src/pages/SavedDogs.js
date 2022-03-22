@@ -12,6 +12,7 @@ const SavedDogs = () => {
   const {loading, data} = useQuery(GET_ME);
   const [removeDog] = useMutation(REMOVE_DOG);
   const userData = data?.me || [];
+  console.log("saveddogs", data)
 
   const handleDeleteSavedDog = async (id) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
