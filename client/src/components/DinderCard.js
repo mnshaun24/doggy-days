@@ -5,15 +5,15 @@ import { useMutation } from "@apollo/client";
 import { SAVE_DOG } from "../utils/mutations";
 import { saveDogIds, getSavedDogIds } from "../utils/localStorage";
 
-
 // const DinderStuff = ({ breed, character, lifespan, weight }) => {
 // }
 
 const DinderCard = () => {
-
   const url =
     "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1";
   const [dog, setDog] = useState();
+
+  const [savedDogs, setSavedDogs] = useState([]);
 
   const [savedDogIds, setSavedDogIds] = useState(getSavedDogIds());
 
@@ -50,8 +50,41 @@ const DinderCard = () => {
     getDog();
   };
 
-  const handleSaveDog = async () => {
-    console.log(dog);
+  const handleSaveDog = async (dogId) => {
+    const dogData = dog.map(() => ({
+      image: dog[0].url,
+      breed: dog[0].breeds[0].name,
+      characteristics: dog[0].breeds[0].temperament,
+      life_span: dog[0].breeds[0].life_span,
+      weight: dog[0].breeds[0].weight.imperial,
+      dogId: dog[0].id,
+    }));
+
+    setSavedDogs(dogData);
+    console.log(savedDogs);
+
+    const dogToSave = savedDogs.find(() => dog[0].id === dogId);
+
+    const token = Auth.loggedIn() ? Auth.getToken() : null;
+
+    console.log(savedDogIds);
+
+    if (!token) {
+      return false;
+    }
+
+    try {
+      const response = await saveDog({
+        variables: {
+          input: dogToSave,
+        },
+      });
+      console.log(dogToSave);
+      console.log(response);
+      setSavedDogIds([...savedDogIds, dogToSave.dogId]);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -62,21 +95,34 @@ const DinderCard = () => {
             <Card.Img
               className="apiImages"
               src={dog && dog[0].url}
-              alt={`This is a ${dog && dog[0].breeds[0].name}`}></Card.Img>
+              alt={`This is a ${dog && dog[0].breeds[0].name}`}
+            ></Card.Img>
             <Card.Title>
-            <h5>Breed: {dog && dog[0].breeds[0].name}</h5> 
-            </Card.Title >
+              <h5>Breed: {dog && dog[0].breeds[0].name}</h5>
+            </Card.Title>
             <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
             <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
-           
+
             <>
-            <div className="saveBtn">
-              <Button className="heartbtn"
-                disabled={savedDogIds?.some((savedDogId) => savedDogId === dog[0].id)} onClick={() => handleSaveDog()}><img className="heartpic" src={require('../assets/images/heart.png')} alt="heart" /></Button>
-                
-              <Button className="arrowbtn" onClick={() => handleNextDog()}><img className="arrow" src={require('../assets/images/right-arrow.png')} alt="arrow" /></Button>
-            </div>
+              <div className="saveBtn">
+                <Button
+                  className="heartbtn"
+                  disabled={savedDogIds?.some(
+                    (savedDogId) => savedDogId === dog && dog[0].id
+                  )}
+                  onClick={() => handleSaveDog(dog[0].id)}
+                  alt="heart icon"
+                ></Button>
+
+                <Button className="arrowbtn" onClick={() => handleNextDog()}>
+                  <img
+                    className="arrow"
+                    src={require("../assets/images/right-arrow.png")}
+                    alt="arrow"
+                  />
+                </Button>
+              </div>
             </>
           </Card.Body>
         </Container>

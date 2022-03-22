@@ -28,6 +28,7 @@ export const SAVE_DOG = gql`
     saveDog(input: $input) {
       _id
       name
+      phoneNumber
       dogCount
       savedDogs {
         image
@@ -38,7 +39,6 @@ export const SAVE_DOG = gql`
         dogId
       }
     }
-
   }`;
 
   export const REMOVE_DOG = gql`
