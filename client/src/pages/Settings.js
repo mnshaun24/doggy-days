@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Breed from "../components/Breed";
 import Character from "../components/Character";
 import Lifespan from "../components/Lifespan";
 import Weight from "../components/Weight";
 import Auth from "../utils/auth";
+import {bubble as Menu} from "react-burger-menu";
+
 // import { Nav } from "react-bootstrap";
 
 const Settings = () => {
@@ -18,18 +20,30 @@ const Settings = () => {
 
         if (settingType === "breed") {
           setBreed(!breed)
-        } else if (settingType === "character") {
+          console.log(breed, "breed");
+        }
+
+        if (settingType === "character") {
           setCharacter(!character)
-        } else if (settingType === "lifeSpan") {
+          console.log(character, "character");
+        }
+
+        if (settingType === "lifeSpan") {
           setLifeSpan(!lifeSpan)
-        } else if (settingType === "weight") {
+          console.log(lifeSpan, "lifespan");
+        }
+
+        if (settingType === "weight") {
           setWeight(!weight)
+          console.log(weight, "weight");
         }
   }
 
 
   return (
-    <section>
+    <div id="outer-container">
+    <Menu pageWrapId={ "page-wrap" } outerContainerId={ "outer-container"}>
+    <div id="page-wrap">
       {/* toggle switch code used from the following video: https://youtu.be/bztDMD4HSL0 */}
       <div>
           <Breed ToggleSetting={ToggleSetting} />
@@ -46,7 +60,9 @@ const Settings = () => {
       <button  onClick={Auth.logout}>
       Logout
       </button>
-    </section>
+    </div>
+    </Menu>
+    </div>
   );
 };
 

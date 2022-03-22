@@ -36,7 +36,6 @@ function App() {
           <Route path="/" element={<ModalContain />} />
             <Route path="/main" element={<Layout />}>
               <Route index element={<DogSwiper />} />
-              <Route path="settings" element={<Settings />} />
               <Route path="home" element={<DogSwiper />} />
               <Route path="saved" element={<SavedDogs />} />
             </Route>

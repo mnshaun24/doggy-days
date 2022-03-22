@@ -4,16 +4,16 @@ import Auth from "../utils/auth";
 import { useMutation } from "@apollo/client";
 import { SAVE_DOG } from "../utils/mutations";
 import { saveDogIds, getSavedDogIds } from "../utils/localStorage";
-import Settings from "../pages/Settings";
 
 
-
-const DinderCard = () => {
+const DinderCard = ({ breed, character, lifespan, weight }) => {
   const url =
     "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1";
   const [dog, setDog] = useState();
 
   const [savedDogIds, setSavedDogIds] = useState(getSavedDogIds());
+
+  // const [settingToggle, setSettingToggle] = useState();
 
   useEffect(() => {
     return () => saveDogIds(savedDogIds);
@@ -60,11 +60,10 @@ const DinderCard = () => {
               alt={`This is a ${dog && dog[0].breeds[0].name}`}
             ></Card.Img>
             <Card.Title>
-            {breed && <p>Breed: {dog && dog[0].breeds[0].name} </p> }
+            <p>Breed: {dog && dog[0].breeds[0].name} </p> 
             <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
             <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
-
             </Card.Title>
 
             <>

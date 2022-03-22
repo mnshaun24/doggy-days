@@ -7,6 +7,8 @@ function Character({ ToggleSetting }) {
       <label className="switch">
         <input
           type="checkbox"
+          onChange={() => ToggleSetting("character")}
+
         />
         <span className="slider" />
       </label>
