@@ -38,26 +38,6 @@ const Settings = () => {
 
   return (
     <section>
-      <ul>
-        <li>
-          <Link to="home">
-            <img
-              className="headerlogo"
-              src={require("../assets/images/logo.png")}
-              alt="logo"
-            />
-          </Link>
-        </li>
-        <li>
-          <Link to="saved">
-            <img
-              className="circle"
-              src={require("../assets/images/circle.png")}
-              alt="saved"
-            />
-          </Link>
-        </li>
-      </ul>
 
       {/* toggle switch code used from the following video: https://youtu.be/bztDMD4HSL0 */}
       <div className="breedtog">

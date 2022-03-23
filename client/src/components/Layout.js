@@ -10,15 +10,20 @@ const Layout = () => {
   return (
     <>
       <nav>
-        {/* <ul> */}
-          <Menu>
-            <div>
-              <Settings>Settings</Settings>
-            </div>
-          </Menu>
-
-          {/* <Link to="settings"><img className="settings" src={require('../assets/images/settings.png')} alt="settings" /></Link> */}
-{/* 
+        <ul>
+        
+        <Menu
+          customBurgerIcon={
+            <img
+              src={require("../assets/images/settings.png")}
+              alt="settingsicon"
+            />
+          }
+        >
+          <div>
+            <Settings></Settings>
+          </div>
+        </Menu>
           <li>
             <Link to="home">
               <img
@@ -37,7 +42,7 @@ const Layout = () => {
               />
             </Link>
           </li>
-        </ul> */}
+        </ul>
       </nav>
 
       <Outlet />
