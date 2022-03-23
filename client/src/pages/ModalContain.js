@@ -16,10 +16,14 @@ const ModalContain = () => {
     <>
       <div className="mainpage">
 
-        <h1>Dinder</h1>
+        <div className='dinderContain'>        <h1>Dinder</h1>
+</div>
+<div className='logoSignContain'>        <img className="logopic" src={require('../assets/images/logo.png')} alt="logo" />
+</div>
+<div className='signBtnContain'>        <Button variant="outline-light" className="login-signupbtn"onClick={handleClick}>Login or Sign up here!</Button>
+</div>
+
       
-        <img className="logopic" src={require('../assets/images/logo.png')} alt="logo" />
-        <Button variant="outline-light" className="login-signupbtn"onClick={handleClick}>Login or Sign up here!</Button>
 
         <Modal
           size="lg"

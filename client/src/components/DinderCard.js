@@ -95,20 +95,41 @@ const DinderCard = () => {
               src={dog && dog[0].url}
               alt={`This is a ${dog && dog[0].breeds[0].name}`}
             ></Card.Img>
-            <Card.Title>{dog && dog[0].breeds[0].name}</Card.Title>
+
+            <Card.Title>
+              <h1>{dog && dog[0].breeds[0].name}</h1>
+            </Card.Title>
+
             <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
             <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
 
             <>
-              <Button
-                disabled={savedDogIds?.some(
-                  (savedDogId) => savedDogId === dog && dog[0].id
-                )}
-                onClick={() => handleSaveDog(dog[0].id)}
-              > Save Dog
-              </Button>
-              <Button onClick={() => handleNextDog()}>Next</Button>
+
+              <div className="saveBtn">
+                <Button
+                  className="heartbtn"
+                  // disabled={savedDogIds?.some(
+                  //   (savedDogId) => savedDogId === dog[0].id
+                  // )}
+                  onClick={() => handleSaveDog()}
+                >
+                  <img
+                    className="heartpic"
+                    src={require("../assets/images/heart.png")}
+                    alt="heart"
+                  />
+                </Button>
+
+                <Button className="arrowbtn" onClick={() => handleNextDog()}>
+                  <img
+                    className="arrow"
+                    src={require("../assets/images/cross.png")}
+                    alt="arrow"
+                  />
+                </Button>
+              </div>
+
             </>
           </Card.Body>
         </Container>
