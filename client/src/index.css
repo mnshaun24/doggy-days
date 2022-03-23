@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   /* background-size: cover; */
- 
 }
 
 /* html {
@@ -12,28 +11,28 @@
 body {
   background: linear-gradient(#e66465, #9198e5);
   background-size: cover;
-  height: 100vh ;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-repeat: no-repeat;
-  }
-  
+  height: 100vh;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-repeat: no-repeat;
+}
+
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
 .mainpage {
-    margin: 0;
-    position: relative;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: "DM Sans", sans-serif;
 }
 
 .container {
@@ -56,7 +55,7 @@ img.card-img {
 } */
 
 .logoutbtn {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   margin-top: 10%;
 }
 
@@ -69,7 +68,7 @@ img.card-img {
   padding-bottom: 1%;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
@@ -81,8 +80,14 @@ h2 {
   color: white;
 }
 
-.nav-item:active, .nav-item:hover {
-  background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+.nav-item:active,
+.nav-item:hover {
+  background-image: linear-gradient(
+    to right,
+    #84fab0 0%,
+    #8fd3f4 51%,
+    #84fab0 100%
+  );
 }
 
 .nav {
@@ -157,11 +162,11 @@ ul {
   list-style: none;
 }
 
- img.headerlogo, img.circle {
+img.headerlogo,
+img.circle {
   height: 50px;
   width: 50px;
   /* margin: 0px 0px 0px 100px; */
-
 }
 
 img.card-img {
@@ -179,15 +184,15 @@ img.card-img {
   border-style: outset;
   text-align: center;
   padding-top: 3%;
-  font-family: 'DM Sans', sans-serif;
-} 
+  font-family: "DM Sans", sans-serif;
+}
 
 p {
   padding-left: 15px;
   margin-bottom: 0rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 img.logopic {
@@ -200,8 +205,8 @@ li {
 }
 
 button.arrowbtn.btn.btn-primary:visited {
- border: none;
- border-color: #fff;
+  border: none;
+  border-color: #fff;
 }
 
 button:active {
@@ -214,7 +219,8 @@ button.heartbtn.btn.btn-primary {
   justify-content: center;
 }
 
-button.arrowbtn, button.heartbtn {
+button.arrowbtn,
+button.heartbtn {
   color: #fff;
   background-color: #fff;
   border-color: #fff;
@@ -231,10 +237,12 @@ div.saveBtn {
   margin-top: 15px;
 }
 
-button.arrowbtn:hover, button.heartbtn:hover, 
-button.arrowbtn:focus, button.heartbtn:focus {
-  background-image:none !important;
-  background-color:#fff !important;
+button.arrowbtn:hover,
+button.heartbtn:hover,
+button.arrowbtn:focus,
+button.heartbtn:focus {
+  background-image: none !important;
+  background-color: #fff !important;
   border-color: #fff !important;
 }
 
@@ -303,7 +311,6 @@ button#react-burger-menu-btn {
 }
 
 @media (max-width: 980px) {
-
   .apiImages {
     display: block;
     justify-content: center;
@@ -313,7 +320,6 @@ button#react-burger-menu-btn {
 
   .cardpage {
     margin-top: 10%;
-  
   }
 
   /* img.heartpic, img.arrow, 
@@ -323,31 +329,31 @@ button#react-burger-menu-btn {
 }
 
 @media (max-width: 768px) {
-
 }
 @media (min-width: 320px) {
- 
-  img.logopic{
+  img.logopic {
     height: 300px;
+    text-align: center;
   }
- 
-  img.heartpic, img.arrow {
-   max-width: 100%;
+
+  img.heartpic,
+  img.arrow {
+    max-width: 100%;
   }
 
   .apiImages {
     margin-left: 0px;
-    height:fit-content;
+    height: fit-content;
   }
-  
+
   .mainpage {
-    margin: 0;
     position: absolute;
+    left: 50%;
     top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
+    border: 5px solid transparent;
+    padding: 10px;
     text-align: center;
-    font-family: 'DM Sans', sans-serif;
   }
 
   .login-signupbtn {
