@@ -11,11 +11,9 @@ const SavedDogs = () => {
 
   const userData = data?.me || [];
 
-  console.log(userData);
 
   const [removeDog] = useMutation(REMOVE_DOG);
 
-  // console.log(userData);
 
   const handleDeleteSavedDog = async (dogId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;

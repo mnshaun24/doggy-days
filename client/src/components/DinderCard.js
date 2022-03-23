@@ -5,9 +5,6 @@ import { useMutation } from "@apollo/client";
 import { SAVE_DOG } from "../utils/mutations";
 import { saveDogIds, getSavedDogIds } from "../utils/localStorage";
 
-// const DinderStuff = ({ breed, character, lifespan, weight }) => {
-// }
-
 const DinderCard = () => {
   const url =
     "https://api.thedogapi.com/v1/images/search?size=med&mime_types=jpg&format=json&has_breeds=true&order=RANDOM&page=0&limit=1";
@@ -16,8 +13,6 @@ const DinderCard = () => {
   const [savedDogs, setSavedDogs] = useState([]);
 
   const [savedDogIds, setSavedDogIds] = useState(getSavedDogIds());
-
-  // const [settingToggle, setSettingToggle] = useState();
 
   useEffect(() => {
     return () => saveDogIds(savedDogIds);
@@ -87,11 +82,10 @@ const DinderCard = () => {
     }
 
     if (dogToSave === undefined) {
-      console.log("try again")
+      console.log("try again");
     } else {
       getDog();
     }
-
   };
 
   return (
@@ -114,7 +108,6 @@ const DinderCard = () => {
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
 
             <>
-
               <div className="saveBtn">
                 <Button
                   className="heartbtn"
@@ -123,7 +116,6 @@ const DinderCard = () => {
                   )}
                   onClick={() => handleSaveDog(dog[0].id)}
                   alt="heart icon"
-
                 >
                   <img
                     className="heartpic"
@@ -136,12 +128,10 @@ const DinderCard = () => {
                   <img
                     className="arrow"
                     src={require("../assets/images/cross.png")}
-
                     alt="cross"
                   />
                 </Button>
               </div>
-
             </>
           </Card.Body>
         </Container>

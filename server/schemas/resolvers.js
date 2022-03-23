@@ -58,17 +58,17 @@ const resolvers = {
       }
     },
     removeDog: async (parent, args, context) => {
-        console.log(context.user, args, "remove dog please work!");
-        if(context.user) {
-            const updateUser = await User.findOneAndUpdate(
-                { _id: context.user._id },
-                {$pull: {savedDogs: {dogId: args.dogId}}},
-                {new: true}
-            )
-            return updateUser;
-        }
-        throw new AuthenticationError('You must be logged in.')
-    }
+      console.log(context.user, args, "remove dog please work!");
+      if (context.user) {
+        const updateUser = await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { savedDogs: { dogId: args.dogId } } },
+          { new: true }
+        );
+        return updateUser;
+      }
+      throw new AuthenticationError("You must be logged in.");
+    },
   },
 };
 
