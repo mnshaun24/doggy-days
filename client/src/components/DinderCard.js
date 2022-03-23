@@ -110,9 +110,9 @@ const DinderCard = () => {
               <div className="saveBtn">
                 <Button
                   className="heartbtn"
-                  // disabled={savedDogIds?.some(
-                  //   (savedDogId) => savedDogId === dog[0].id
-                  // )}
+                  disabled={savedDogIds?.some(
+                    (savedDogId) => savedDogId === dog[0].id
+                  )}
                   onClick={() => handleSaveDog()}
                 >
                   <img
