@@ -85,6 +85,8 @@ const DinderCard = () => {
     } catch (err) {
       console.log(err);
     }
+
+    getDog();
   };
 
   return (
@@ -109,16 +111,21 @@ const DinderCard = () => {
                 <Button
                   className="heartbtn"
                   disabled={savedDogIds?.some(
-                    (savedDogId) => savedDogId === dog && dog[0].id
+                    (savedDogId) => savedDogId === dog[0].id
                   )}
-                  onClick={() => handleSaveDog(dog[0].id)}
-                  alt="heart icon"
-                ></Button>
+                  onClick={() => handleSaveDog()}
+                >
+                  <img
+                    className="heartpic"
+                    src={require("../assets/images/heart.png")}
+                    alt="heart"
+                  />
+                </Button>
 
                 <Button className="arrowbtn" onClick={() => handleNextDog()}>
                   <img
                     className="arrow"
-                    src={require("../assets/images/right-arrow.png")}
+                    src={require("../assets/images/cross.png")}
                     alt="arrow"
                   />
                 </Button>
