@@ -48,15 +48,6 @@ img.card-img {
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-img.card-img {
-  border-radius: 10px;
-  max-height: 380px !important;
-  box-shadow: 3px 13px 18px 11px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 3px 13px 18px 11px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 3px 13px 18px 11px rgba(0, 0, 0, 0.75);
-
-}
-
 .logoutbtn {
   font-family: "DM Sans", sans-serif;
   margin-top: 10%;
