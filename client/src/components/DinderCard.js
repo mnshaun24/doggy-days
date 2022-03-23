@@ -5,7 +5,8 @@ import { useMutation } from "@apollo/client";
 import { SAVE_DOG } from "../utils/mutations";
 import { saveDogIds, getSavedDogIds } from "../utils/localStorage";
 
-
+// const DinderStuff = ({ breed, character, lifespan, weight }) => {
+// }
 
 const DinderCard = () => {
   const url =
@@ -15,6 +16,8 @@ const DinderCard = () => {
   const [savedDogs, setSavedDogs] = useState([]);
 
   const [savedDogIds, setSavedDogIds] = useState(getSavedDogIds());
+
+  // const [settingToggle, setSettingToggle] = useState();
 
   useEffect(() => {
     return () => saveDogIds(savedDogIds);
@@ -48,15 +51,14 @@ const DinderCard = () => {
   };
 
   const handleSaveDog = async (dogId) => {
-
-    const dogData = dog.map(()=> ({
+    const dogData = dog.map(() => ({
       image: dog[0].url,
       breed: dog[0].breeds[0].name,
       characteristics: dog[0].breeds[0].temperament,
       life_span: dog[0].breeds[0].life_span,
       weight: dog[0].breeds[0].weight.imperial,
-      dogId: dog[0].id
-    }))
+      dogId: dog[0].id,
+    }));
 
     setSavedDogs(dogData);
     console.log(savedDogs);
@@ -65,7 +67,7 @@ const DinderCard = () => {
 
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-    // console.log(savedDogIds);
+    console.log(savedDogIds);
 
     if (!token) {
       return false;
@@ -74,43 +76,59 @@ const DinderCard = () => {
     try {
       const response = await saveDog({
         variables: {
-          input: dogToSave
-        }
-      })
+          input: dogToSave,
+        },
+      });
       console.log(dogToSave);
       console.log(response);
-      setSavedDogIds([...savedDogIds, dogToSave.dogId]) 
+      setSavedDogIds([...savedDogIds, dogToSave.dogId]);
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-
   };
 
   return (
     <section>
       {Auth.loggedIn() && (
-        <Container>
+        <Container className="cardpage">
           <Card.Body>
             <Card.Img
+              className="apiImages"
               src={dog && dog[0].url}
               alt={`This is a ${dog && dog[0].breeds[0].name}`}
             ></Card.Img>
             <Card.Title>
-              <h1>{dog && dog[0].breeds[0].name}</h1>
+              <h5>Breed: {dog && dog[0].breeds[0].name}</h5>
             </Card.Title>
             <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
             <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
 
             <>
-              <Button
-                disabled={savedDogIds?.some(
-                  (savedDogId) => savedDogId === dog && dog[0].id
-                )}
-                onClick={() => handleSaveDog(dog[0].id)}
-              > Save Dog
-              </Button>
-              <Button onClick={() => handleNextDog()}>Next</Button>
+              <div className="saveBtn">
+                <Button
+                  className="heartbtn"
+                  disabled={savedDogIds?.some(
+                    (savedDogId) => savedDogId === dog && dog[0].id
+                  )}
+                  onClick={() => handleSaveDog(dog[0].id)}
+                  alt="heart icon"
+                >
+                  <img
+                    className="heartpic"
+                    src={require("../assets/images/heart.png")}
+                    alt="heart"
+                  />
+                </Button>
+
+                <Button className="arrowbtn" onClick={() => handleNextDog()}>
+                  <img
+                    className="arrow"
+                    src={require("../assets/images/cross.png")}
+                    alt="cross"
+                  />
+                </Button>
+              </div>
             </>
           </Card.Body>
         </Container>
@@ -120,7 +138,6 @@ const DinderCard = () => {
 };
 
 export default DinderCard;
-
 // <div className="App">
 //   <h1>Doggy Days</h1>
 //   <img src={dog && dog[0].url} alt="A dog"></img>

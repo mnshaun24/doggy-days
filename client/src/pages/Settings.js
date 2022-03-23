@@ -7,7 +7,6 @@ import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import { bubble as Menu } from "react-burger-menu";
 
-
 import { Button } from "react-bootstrap";
 
 const Settings = () => {
@@ -41,35 +40,33 @@ const Settings = () => {
   return (
     <section className="menu-overlay">
       <Menu
-            customBurgerIcon={
-              <img
-                src={require("../assets/images/settings.png")}
-                alt="settingsicon"
-              />
-            }
-          >
-            
-
-      {/* toggle switch code used from the following video: https://youtu.be/bztDMD4HSL0 */}
-      <div className="breedtog">
-        <Breed ToggleSetting={ToggleSetting} />
-      </div>
-      <div className="chartog">
-        <Character ToggleSetting={ToggleSetting} />
-      </div>
-      <div className="lifetog">
-        <Lifespan ToggleSetting={ToggleSetting} />
-      </div>
-      <div className="weighttog">
-        <Weight ToggleSetting={ToggleSetting} />
-      </div>
-      <Button
-        onClick={Auth.logout}
-        variant="outline-light"
-        className="logoutbtn"
+        customBurgerIcon={
+          <img
+            src={require("../assets/images/settings.png")}
+            alt="settingsicon"
+          />
+        }
       >
-        Logout
-      </Button>
+        {/* toggle switch code used from the following video: https://youtu.be/bztDMD4HSL0 */}
+        <div className="breedtog">
+          <Breed ToggleSetting={ToggleSetting} />
+        </div>
+        <div className="chartog">
+          <Character ToggleSetting={ToggleSetting} />
+        </div>
+        <div className="lifetog">
+          <Lifespan ToggleSetting={ToggleSetting} />
+        </div>
+        <div className="weighttog">
+          <Weight ToggleSetting={ToggleSetting} />
+        </div>
+        <Button
+          onClick={Auth.logout}
+          variant="outline-light"
+          className="logoutbtn"
+        >
+          Logout
+        </Button>
       </Menu>
     </section>
   );
