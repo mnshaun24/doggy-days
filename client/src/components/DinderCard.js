@@ -79,14 +79,19 @@ const DinderCard = () => {
           input: dogToSave,
         },
       });
-      console.log(dogToSave);
-      console.log(response);
+      console.log(dogToSave, "dogtosave log");
+      console.log(response, "response log");
       setSavedDogIds([...savedDogIds, dogToSave.dogId]);
     } catch (err) {
       console.log(err);
     }
 
-    getDog();
+    if (dogToSave === undefined) {
+      console.log("try again")
+    } else {
+      getDog();
+    }
+
   };
 
   return (
@@ -99,21 +104,26 @@ const DinderCard = () => {
               src={dog && dog[0].url}
               alt={`This is a ${dog && dog[0].breeds[0].name}`}
             ></Card.Img>
+
             <Card.Title>
               <h1>{dog && dog[0].breeds[0].name}</h1>
             </Card.Title>
+
             <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
             <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
 
             <>
+
               <div className="saveBtn">
                 <Button
                   className="heartbtn"
-                  // disabled={savedDogIds?.some(
-                  //   (savedDogId) => savedDogId === dog[0].id
-                  // )}
-                  onClick={() => handleSaveDog()}
+                  disabled={savedDogIds?.some(
+                    (savedDogId) => savedDogId === dog && dog[0].id
+                  )}
+                  onClick={() => handleSaveDog(dog[0].id)}
+                  alt="heart icon"
+
                 >
                   <img
                     className="heartpic"
@@ -126,10 +136,12 @@ const DinderCard = () => {
                   <img
                     className="arrow"
                     src={require("../assets/images/cross.png")}
-                    alt="arrow"
+
+                    alt="cross"
                   />
                 </Button>
               </div>
+
             </>
           </Card.Body>
         </Container>
@@ -139,12 +151,3 @@ const DinderCard = () => {
 };
 
 export default DinderCard;
-
-// <div className="App">
-//   <h1>Doggy Days</h1>
-//   <img src={dog && dog[0].url} alt="A dog"></img>
-//   <p>Breed: {dog && dog[0].breeds[0].name}</p>
-//   <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
-//   <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
-//   <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
-// </div>

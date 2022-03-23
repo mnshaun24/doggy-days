@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button, Tab, Nav, Modal } from "react-bootstrap";
-import SignupForm from '../components/SignupForm';
-import LoginForm from '../components/LoginForm';
+import SignupForm from "../components/SignupForm";
+import LoginForm from "../components/LoginForm";
 
 const ModalContain = () => {
-
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(true);
   };
 
-
   return (
     <>
       <div className="mainpage">
+
 
         <div className='dinderContain'>        <h1>Dinder</h1>
 </div>
@@ -23,7 +22,7 @@ const ModalContain = () => {
 <div className='signBtnContain'>        <Button variant="outline-light" className="login-signupbtn"onClick={handleClick}>Login or Sign up here!</Button>
 </div>
 
-      
+
 
         <Modal
           size="lg"
@@ -32,7 +31,6 @@ const ModalContain = () => {
           aria-labelledby="signup-modal"
           centered
         >
-
           {/* tab container to do either signup or login component */}
           <Tab.Container defaultActiveKey="login">
             <Modal.Header closeButton>
@@ -60,11 +58,9 @@ const ModalContain = () => {
           </Tab.Container>
         </Modal>
         {/* {isOpen && <SignupForm handleClick={handleClick} />} */}
-
       </div>
     </>
-  )
-}
-
+  );
+};
 
 export default ModalContain;

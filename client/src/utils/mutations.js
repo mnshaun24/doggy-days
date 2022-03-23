@@ -39,16 +39,17 @@ export const SAVE_DOG = gql`
         dogId
       }
     }
-  }`;
+  }
+`;
 
-  export const REMOVE_DOG = gql`
-  mutation removeDog($id: ID!) {
-    removeDog(id: $id) {
+export const REMOVE_DOG = gql`
+  mutation removeDog($dogId: ID!) {
+    removeDog(dogId: $dogId) {
       _id
       name
-      dogCount 
+      dogCount
       savedDogs {
-        id
+        dogId
         image
         breed
         characteristics
@@ -57,5 +58,4 @@ export const SAVE_DOG = gql`
       }
     }
   }
-  `;
-
+`;
