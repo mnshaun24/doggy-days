@@ -47,13 +47,19 @@ So that I can reference my favorites while adopt my new dog.
 ## Demo
 
 ### Login-Page
-![Login-Page]()
+![Login-Page](client/src/assets/images/homepage-screenshot.png)
+
+### Login/Signup-Modal
+![Login/Signup-Modal](client/src/assets/images/login-modal.png)
+
+### Settings-Menu
+![Settings-Menu](client/src/assets/images/settings-page.png)
 
 ### Main-Page
-![Main-Page]()
+![Main-Page](client/src/assets/images/main-page.png)
 
 ### Saved-Dog Page
-![Saved-Dog-Page]()
+![Saved-Dog-Page](client/src/assets/images/saved-dog-page.png)
 
 ## Team-Members
 <li> Molly Montgomery 
@@ -62,7 +68,8 @@ So that I can reference my favorites while adopt my new dog.
 <li> Greg Lanctot
 
 ## Deployed-App
-Deployed Link: 
+Deployed Link: <br>
+ http://dinder-dog.herokuapp.com/
 
 ## Questions
 If you have any questions regarding the repo please contact Molly: mollymontgomery515@gmail.com, Ronya: klmirg6@gmail.com, Greg: gregory.lanctot28@gmail.com, or Shaun: mnshauntommie@gmail.com.
