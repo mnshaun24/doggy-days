@@ -36,8 +36,18 @@ code {
     font-family: 'DM Sans', sans-serif;
 }
 
+.container {
+  margin-top: 0% !important;
+  padding-top: 11% !important;
+}
+
 .cardpage {
-  margin-top: 15%;
+  padding-top: 5%;
+}
+
+img.card-img {
+  border-radius: 10px;
+  max-height: 380px !important;
 }
 
 /* .apiImages {
@@ -82,6 +92,7 @@ h2 {
   margin-bottom: 0;
   justify-content: space-around;
   list-style: none;
+  padding-top: 5%;
 }
 
 .switch {
@@ -168,6 +179,7 @@ img.card-img {
   border-style: outset;
   text-align: center;
   padding-top: 3%;
+  font-family: 'DM Sans', sans-serif;
 } 
 
 p {
@@ -175,6 +187,7 @@ p {
   margin-bottom: 0rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 img.logopic {
@@ -184,10 +197,6 @@ img.logopic {
 li {
   text-align: right;
   padding-top: 3%;
-}
-
-.container {
-  padding-top: 8%;
 }
 
 button.arrowbtn.btn.btn-primary:visited {
