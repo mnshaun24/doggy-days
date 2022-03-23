@@ -1,7 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+
   background-size: cover;
+
+
 }
 
 body {
@@ -46,6 +49,7 @@ img.card-img {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+
 }
 
 .logoutbtn {
@@ -327,6 +331,7 @@ button#react-burger-menu-btn {
 @media (min-width: 320px) {
   img.logopic {
     height: 300px;
+    text-align: center;
   }
 
   img.heartpic,
@@ -340,13 +345,16 @@ button#react-burger-menu-btn {
   }
 
   .mainpage {
-    margin: 0;
     position: absolute;
+    left: 50%;
     top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
+    border: 5px solid transparent;
+    padding: 10px;
     text-align: center;
+
     font-family: "DM Sans", sans-serif;
+
   }
 
   .login-signupbtn {
