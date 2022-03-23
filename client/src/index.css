@@ -148,7 +148,7 @@ label.switch {
 }
 
 input:checked + .slider {
-  background-color: rgba(70, 65, 65, 0.5);
+  background-color: lightblue;
   justify-content: right;
 }
 
