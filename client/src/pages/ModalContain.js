@@ -1,25 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button, Tab, Nav, Modal } from "react-bootstrap";
-import SignupForm from '../components/SignupForm';
-import LoginForm from '../components/LoginForm';
+import SignupForm from "../components/SignupForm";
+import LoginForm from "../components/LoginForm";
 
 const ModalContain = () => {
-
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(true);
   };
 
-
   return (
     <>
       <div className="mainpage">
-
         <h1>Dinder</h1>
-      
-        <img className="logopic" src={require('../assets/images/logo.png')} alt="logo" />
-        <Button variant="outline-light" className="login-signupbtn"onClick={handleClick}>Login or Sign up here!</Button>
+
+        <img
+          className="logopic"
+          src={require("../assets/images/logo.png")}
+          alt="logo"
+        />
+        <Button
+          variant="outline-light"
+          className="login-signupbtn"
+          onClick={handleClick}
+        >
+          Login or Sign up here!
+        </Button>
 
         <Modal
           size="lg"
@@ -28,7 +35,6 @@ const ModalContain = () => {
           aria-labelledby="signup-modal"
           centered
         >
-
           {/* tab container to do either signup or login component */}
           <Tab.Container defaultActiveKey="login">
             <Modal.Header closeButton>
@@ -56,11 +62,9 @@ const ModalContain = () => {
           </Tab.Container>
         </Modal>
         {/* {isOpen && <SignupForm handleClick={handleClick} />} */}
-
       </div>
     </>
-  )
-}
-
+  );
+};
 
 export default ModalContain;

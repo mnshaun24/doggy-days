@@ -6,8 +6,7 @@ import Layout from "./components/Layout";
 import SavedDogs from "./pages/SavedDogs";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ModalContain from "./pages/ModalContain";
-import { setContext } from '@apollo/client/link/context';
-
+import { setContext } from "@apollo/client/link/context";
 
 import {
   ApolloProvider,
@@ -21,11 +20,11 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -39,20 +38,16 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-
-
         <Routes>
           <Route path="/" element={<ModalContain />} />
-            <Route path="/main" element={<Layout />}>
-              <Route index element={<DogSwiper />} />
-              <Route path="home" element={<DogSwiper />} />
-              <Route path="saved" element={<SavedDogs />} />
-            </Route>
+          <Route path="/main" element={<Layout />}>
+            <Route index element={<DogSwiper />} />
+            <Route path="home" element={<DogSwiper />} />
+            <Route path="saved" element={<SavedDogs />} />
+          </Route>
         </Routes>
-
       </Router>
     </ApolloProvider>
-
   );
 }
 export default App;

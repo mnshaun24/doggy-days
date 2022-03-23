@@ -4,7 +4,6 @@ import Character from "../components/Character";
 import Lifespan from "../components/Lifespan";
 import Weight from "../components/Weight";
 import Auth from "../utils/auth";
-import { Link } from "react-router-dom";
 import { bubble as Menu } from "react-burger-menu";
 
 import { Button } from "react-bootstrap";

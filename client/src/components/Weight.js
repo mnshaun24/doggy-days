@@ -5,11 +5,7 @@ function Weight({ ToggleSetting }) {
     <div>
       Weight
       <label className="switch">
-        <input
-          type="checkbox"
-          onChange={() => ToggleSetting("weight")}
-
-        />
+        <input type="checkbox" onChange={() => ToggleSetting("weight")} />
         <span className="slider" />
       </label>
     </div>

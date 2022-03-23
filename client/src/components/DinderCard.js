@@ -98,7 +98,7 @@ const DinderCard = () => {
               alt={`This is a ${dog && dog[0].breeds[0].name}`}
             ></Card.Img>
             <Card.Title>
-              <h5>Breed: {dog && dog[0].breeds[0].name}</h5>
+              <h5>{dog && dog[0].breeds[0].name}</h5>
             </Card.Title>
             <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
             <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>

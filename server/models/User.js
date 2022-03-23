@@ -1,7 +1,7 @@
-const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
-const dogSchema = require('./Dog');
+const dogSchema = require("./Dog");
 
 const userSchema = new Schema(
   {
@@ -14,7 +14,7 @@ const userSchema = new Schema(
       required: true,
       unique: true,
       minlength: 10,
-      maxlength: 10
+      maxlength: 10,
     },
     password: {
       type: String,
@@ -32,8 +32,8 @@ const userSchema = new Schema(
 );
 
 // hash user password
-userSchema.pre('save', async function (next) {
-  if (this.isNew || this.isModified('password')) {
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
   }
@@ -46,10 +46,10 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-userSchema.virtual('dogCount').get(function() {
+userSchema.virtual("dogCount").get(function () {
   return this.savedDogs.length;
-})
+});
 
-const User = model('User', userSchema);
+const User = model("User", userSchema);
 
 module.exports = User;
