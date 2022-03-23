@@ -9,21 +9,21 @@ import Nav from "react-bootstrap/Nav";
 const Layout = () => {
   return (
     <>
-      <nav>
+      <Nav className="navsettings">
         <ul>
-        <li>
-          <Menu
-            customBurgerIcon={
-              <img
-                src={require("../assets/images/settings.png")}
-                alt="settingsicon"
-              />
-            }
-          >
-            {/* <div> */}
+          <li>
+            <Menu
+              customBurgerIcon={
+                <img
+                  src={require("../assets/images/settings.png")}
+                  alt="settingsicon"
+                />
+              }
+            >
+              {/* <div> */}
               <Settings></Settings>
-            {/* </div> */}
-          </Menu>
+              {/* </div> */}
+            </Menu>
           </li>
           <li>
             <Link to="home">
@@ -44,7 +44,7 @@ const Layout = () => {
             </Link>
           </li>
         </ul>
-      </nav>
+      </Nav>
 
       <Outlet />
     </>
