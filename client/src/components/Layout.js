@@ -11,19 +11,20 @@ const Layout = () => {
     <>
       <nav>
         <ul>
-        
-        <Menu
-          customBurgerIcon={
-            <img
-              src={require("../assets/images/settings.png")}
-              alt="settingsicon"
-            />
-          }
-        >
-          <div>
-            <Settings></Settings>
-          </div>
-        </Menu>
+        <li>
+          <Menu
+            customBurgerIcon={
+              <img
+                src={require("../assets/images/settings.png")}
+                alt="settingsicon"
+              />
+            }
+          >
+            {/* <div> */}
+              <Settings></Settings>
+            {/* </div> */}
+          </Menu>
+          </li>
           <li>
             <Link to="home">
               <img
