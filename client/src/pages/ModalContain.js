@@ -13,16 +13,28 @@ const ModalContain = () => {
   return (
     <>
       <div className="mainpage">
-
-
-        <div className='dinderContain'>        <h1>Dinder</h1>
-</div>
-<div className='logoSignContain'>        <img className="logopic" src={require('../assets/images/logo.png')} alt="logo" />
-</div>
-<div className='signBtnContain'>        <Button variant="outline-light" className="login-signupbtn"onClick={handleClick}>Login or Sign up here!</Button>
-</div>
-
-
+        <div className="dinderContain">
+          {" "}
+          <h1>Dinder</h1>
+        </div>
+        <div className="logoSignContain">
+          {" "}
+          <img
+            className="logopic"
+            src={require("../assets/images/logo.png")}
+            alt="logo"
+          />
+        </div>
+        <div className="signBtnContain">
+          {" "}
+          <Button
+            variant="outline-light"
+            className="login-signupbtn"
+            onClick={handleClick}
+          >
+            Login or Sign up here!
+          </Button>
+        </div>
 
         <Modal
           size="lg"
