@@ -5,6 +5,8 @@ import Lifespan from "../components/Lifespan";
 import Weight from "../components/Weight";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
+import { bubble as Menu } from "react-burger-menu";
+
 
 import { Button } from "react-bootstrap";
 
@@ -37,7 +39,16 @@ const Settings = () => {
   }
 
   return (
-    <section>
+    <section className="menu-overlay">
+      <Menu
+            customBurgerIcon={
+              <img
+                src={require("../assets/images/settings.png")}
+                alt="settingsicon"
+              />
+            }
+          >
+            
 
       {/* toggle switch code used from the following video: https://youtu.be/bztDMD4HSL0 */}
       <div className="breedtog">
@@ -59,6 +70,7 @@ const Settings = () => {
       >
         Logout
       </Button>
+      </Menu>
     </section>
   );
 };

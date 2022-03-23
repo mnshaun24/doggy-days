@@ -75,6 +75,15 @@ h2 {
   background-image: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
 }
 
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  justify-content: space-around;
+  list-style: none;
+}
+
 .switch {
   position: relative;
   display: inline-block;
@@ -222,11 +231,26 @@ button.arrowbtn:focus, button.heartbtn:focus {
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: relative;
+  position: static;
   width: 50px;
   height: 50px;
   left: 36px;
   top: 36px;
+}
+
+button#react-burger-menu-btn {
+  position: absolute !important;
+  left: 30px !important;
+  top: 0px !important;
+  z-index: 1 !important;
+  width: 20% !important;
+  height: 10% !important;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  font-size: 0px;
+  background: green;
+  cursor: pointer;
 }
 
 /* Color/shape of burger icon bars */

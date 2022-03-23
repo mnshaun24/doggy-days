@@ -1,6 +1,5 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
-import { bubble as Menu } from "react-burger-menu";
 
 import Settings from "../pages/Settings";
 
@@ -9,21 +8,9 @@ import Nav from "react-bootstrap/Nav";
 const Layout = () => {
   return (
     <>
-      <nav>
-        <ul>
+      <nav className="nav">
         <li>
-          <Menu
-            customBurgerIcon={
-              <img
-                src={require("../assets/images/settings.png")}
-                alt="settingsicon"
-              />
-            }
-          >
-            {/* <div> */}
-              <Settings></Settings>
-            {/* </div> */}
-          </Menu>
+          <Settings />
           </li>
           <li>
             <Link to="home">
@@ -43,7 +30,6 @@ const Layout = () => {
               />
             </Link>
           </li>
-        </ul>
       </nav>
 
       <Outlet />
