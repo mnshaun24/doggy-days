@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-// import DogSwiper from '../pages/DogSwiper';
+import { useMutation } from "@apollo/client";
 
-// import { Link } from "react-router-dom";
-
-
-
-import { useMutation } from '@apollo/client';
-
-import { LOGIN } from '../utils/mutations';
-import Auth from '../utils/auth';
+import { LOGIN } from "../utils/mutations";
+import Auth from "../utils/auth";
 
 const LoginForm = () => {
-
-  const [userFormData, setUserFormData] = useState({ phoneNumber: '', password: '' });
+  const [userFormData, setUserFormData] = useState({
+    phoneNumber: "",
+    password: "",
+  });
 
   const [login, { error }] = useMutation(LOGIN);
 
@@ -32,15 +28,15 @@ const LoginForm = () => {
       });
 
       console.log(data);
-      Auth.login(data.login.token)
+      Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
     }
 
     setUserFormData({
-      phoneNumber: '',
-      password: ''
-    })
+      phoneNumber: "",
+      password: "",
+    });
   };
 
   return (
@@ -49,22 +45,24 @@ const LoginForm = () => {
         <h2>Login Here:</h2>
         <form onSubmit={handleFormSubmit}>
           <input
-            placeholder='Your phone number'
-            name='phoneNumber'
-            type='phoneNumber'
-            id='phoneNumber'
+            placeholder="Your phone number"
+            name="phoneNumber"
+            type="phoneNumber"
+            id="phoneNumber"
             value={userFormData.phoneNumber}
             onChange={handleInputChange}
           />
           <input
-            placeholder='*********'
-            name='password'
-            type='password'
-            id='password'
+            placeholder="*********"
+            name="password"
+            type="password"
+            id="password"
             value={userFormData.password}
             onChange={handleInputChange}
           />
-          <Button variant="outline-light" type="submit">Submit</Button>
+          <Button variant="outline-light" type="submit">
+            Submit
+          </Button>
         </form>
         {error && <div>Login failed</div>}
       </div>

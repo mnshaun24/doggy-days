@@ -5,10 +5,7 @@ function Breed({ ToggleSetting }) {
     <div>
       Breed
       <label className="switch">
-        <input
-          type="checkbox"
-          onChange={() => ToggleSetting("breed")}
-        />
+        <input type="checkbox" onChange={() => ToggleSetting("breed")} />
         <span className="slider" />
       </label>
     </div>

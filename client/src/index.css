@@ -1,12 +1,11 @@
 * {
   margin: 0;
   padding: 0;
-  /* background-size: cover; */
-}
 
-/* html {
-  margin-top: 0px;
-} */
+  background-size: cover;
+
+
+}
 
 body {
   background: linear-gradient(#e66465, #9198e5);
@@ -47,12 +46,16 @@ code {
 img.card-img {
   border-radius: 10px;
   max-height: 380px !important;
+
 }
 
-/* .apiImages {
-  display:block;
-  
-} */
+img.card-img {
+  border-radius: 10px;
+  max-height: 380px !important;
+  box-shadow: 3px 13px 18px 11px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 13px 18px 11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 13px 18px 11px rgba(0, 0, 0, 0.75);
+}
 
 .logoutbtn {
   font-family: "DM Sans", sans-serif;
@@ -354,6 +357,9 @@ button#react-burger-menu-btn {
     border: 5px solid transparent;
     padding: 10px;
     text-align: center;
+
+    font-family: "DM Sans", sans-serif;
+
   }
 
   .login-signupbtn {

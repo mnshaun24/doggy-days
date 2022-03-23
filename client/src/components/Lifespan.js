@@ -5,11 +5,7 @@ function Lifespan({ ToggleSetting }) {
     <div>
       Life Span
       <label className="switch">
-        <input
-          type="checkbox"
-          onChange={() => ToggleSetting("lifeSpan")}
-
-        />
+        <input type="checkbox" onChange={() => ToggleSetting("lifeSpan")} />
         <span className="slider" />
       </label>
     </div>
