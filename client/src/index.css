@@ -1,0 +1,366 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* background-size: cover; */
+}
+
+/* html {
+  margin-top: 0px;
+} */
+
+body {
+  background: linear-gradient(#e66465, #9198e5);
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-repeat: no-repeat;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.mainpage {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: "DM Sans", sans-serif;
+}
+
+.container {
+  margin-top: 0% !important;
+  padding-top: 11% !important;
+}
+
+.cardpage {
+  padding-top: 5%;
+}
+
+img.card-img {
+  border-radius: 10px;
+  max-height: 380px !important;
+}
+
+/* .apiImages {
+  display:block;
+  
+} */
+
+.logoutbtn {
+  font-family: "DM Sans", sans-serif;
+  margin-top: 10%;
+}
+
+.settingspage {
+  text-align: center;
+  padding-top: 20%;
+}
+
+.settingspage div {
+  padding-bottom: 1%;
+}
+
+.hide {
+  display: none;
+}
+
+.modal-content {
+  background: linear-gradient(#e66465, #9198e5);
+}
+
+h2 {
+  color: white;
+}
+
+.nav-item:active,
+.nav-item:hover {
+  background-image: linear-gradient(
+    to right,
+    #84fab0 0%,
+    #8fd3f4 51%,
+    #84fab0 100%
+  );
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  justify-content: space-around;
+  list-style: none;
+  padding-top: 5%;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 145px;
+  justify-content: flex-end;
+}
+
+label.switch {
+  display: inline-block;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  justify-content: right;
+}
+
+input:checked + .slider {
+  background-color: rgba(70, 65, 65, 0.5);
+  justify-content: right;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+ul {
+  display: inline-flex;
+  justify-content: center;
+  padding-left: 8%;
+  padding-right: 5%;
+  padding-top: 3%;
+  list-style: none;
+}
+
+img.headerlogo,
+img.circle {
+  height: 50px;
+  width: 50px;
+  /* margin: 0px 0px 0px 100px; */
+}
+
+img.card-img {
+  border-radius: 10px;
+}
+
+.card-body {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 12px 1px;
+}
+
+.card-title.h5 {
+  margin: 15px;
+  border-style: outset;
+  text-align: center;
+  padding-top: 3%;
+  font-family: "DM Sans", sans-serif;
+}
+
+p {
+  padding-left: 15px;
+  margin-bottom: 0rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Roboto", sans-serif;
+}
+
+img.logopic {
+  margin-top: 10%;
+}
+
+li {
+  text-align: right;
+  padding-top: 3%;
+}
+
+button.arrowbtn.btn.btn-primary:visited {
+  border: none;
+  border-color: #fff;
+}
+
+button:active {
+  border: transparent;
+}
+
+button.heartbtn.btn.btn-primary {
+  margin-right: 20%;
+  align-items: center;
+  justify-content: center;
+}
+
+button.arrowbtn,
+button.heartbtn {
+  color: #fff;
+  background-color: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  height: 60px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+div.saveBtn {
+  display: inline-flex;
+  justify-content: center;
+  margin-left: 25%;
+  margin-top: 15px;
+}
+
+button.arrowbtn:hover,
+button.heartbtn:hover,
+button.arrowbtn:focus,
+button.heartbtn:focus {
+  background-image: none !important;
+  background-color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: static;
+  width: 50px;
+  height: 50px;
+  left: 36px;
+  top: 36px;
+}
+
+button#react-burger-menu-btn {
+  position: absolute !important;
+  left: 30px !important;
+  top: 0px !important;
+  z-index: 1 !important;
+  width: 20% !important;
+  height: 10% !important;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  font-size: 0px;
+  background: green;
+  cursor: pointer;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: black;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #fff;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #fff;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #fff;
+  padding: 0.8em;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: linear-gradient(#e66465, #9198e5);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  padding-top: 25%;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(230, 228, 235, 0.3);
+}
+
+@media (max-width: 980px) {
+  .apiImages {
+    display: block;
+    justify-content: center;
+    height: min-content;
+    margin-left: 100px;
+  }
+
+  .cardpage {
+    margin-top: 10%;
+  }
+
+  /* img.heartpic, img.arrow, 
+  button.heartbtn, button.arrowbtn {
+    margin-left: 10px;
+   } */
+}
+
+@media (max-width: 768px) {
+}
+@media (min-width: 320px) {
+  img.logopic {
+    height: 300px;
+    text-align: center;
+  }
+
+  img.heartpic,
+  img.arrow {
+    max-width: 100%;
+  }
+
+  .apiImages {
+    margin-left: 0px;
+    height: fit-content;
+  }
+
+  .mainpage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid transparent;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .login-signupbtn {
+    margin-top: 20%;
+  }
+
+  .cardpage {
+    margin-top: 25%;
+  }
+}
