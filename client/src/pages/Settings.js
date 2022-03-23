@@ -5,10 +5,7 @@ import Lifespan from "../components/Lifespan";
 import Weight from "../components/Weight";
 import Auth from "../utils/auth";
 
-import { Link } from "react-router-dom";
 import { bubble as Menu } from "react-burger-menu";
-
-
 
 import { Button } from "react-bootstrap";
 
@@ -43,7 +40,6 @@ const Settings = () => {
   return (
     <section className="menu-overlay">
       <Menu
-
         customBurgerIcon={
           <img
             src={require("../assets/images/settings.png")}
@@ -71,7 +67,6 @@ const Settings = () => {
         >
           Logout
         </Button>
-
       </Menu>
     </section>
   );

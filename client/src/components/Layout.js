@@ -3,15 +3,12 @@ import { Outlet, Link } from "react-router-dom";
 
 import Settings from "../pages/Settings";
 
-import Nav from "react-bootstrap/Nav";
-
 const Layout = () => {
   return (
     <>
       <nav className="nav">
         <li>
           <Settings />
-
         </li>
         <li>
           <Link to="home">
@@ -31,7 +28,6 @@ const Layout = () => {
             />
           </Link>
         </li>
-
       </nav>
 
       <Outlet />

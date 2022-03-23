@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/dinder', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dinder-dog', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  // useCreateIndex: true,
+  // useFindAndModify: false
 });
 
 module.exports = mongoose.connection;
