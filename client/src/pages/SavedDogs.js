@@ -9,16 +9,16 @@ import { GET_ME } from '../utils/queries';
 
 
 const SavedDogs = () => {
-  const {data} = useQuery(GET_ME);
+  const {loading, data} = useQuery(GET_ME);
 
-  if (data) {
-    console.log(data);
-  }
+  const userData = data?.me || [];
+  
+  console.log(userData);
 
   const [removeDog] = useMutation(REMOVE_DOG);
-  const userData = data?.me || [];
+  
 
-  console.log(userData);
+  // console.log(userData);
 
   const handleDeleteSavedDog = async (id) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -39,9 +39,9 @@ const SavedDogs = () => {
     }
   };
 
-  // if (loading) {
-  //   return <h2>LOADING...</h2>
-  // }
+  if (loading) {
+    return <h2>LOADING...</h2>
+  }
 
   return (
     <>
