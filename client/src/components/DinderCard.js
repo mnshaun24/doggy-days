@@ -97,14 +97,17 @@ const DinderCard = () => {
               src={dog && dog[0].url}
               alt={`This is a ${dog && dog[0].breeds[0].name}`}
             ></Card.Img>
+
             <Card.Title>
-              <h5>{dog && dog[0].breeds[0].name}</h5>
+              <h1>{dog && dog[0].breeds[0].name}</h1>
             </Card.Title>
+
             <p>Characteristics: {dog && dog[0].breeds[0].temperament}</p>
             <p>Life Span: {dog && dog[0].breeds[0].life_span}</p>
             <p>Weight: {dog && dog[0].breeds[0].weight.imperial} lbs.</p>
 
             <>
+
               <div className="saveBtn">
                 <Button
                   className="heartbtn"
@@ -113,6 +116,7 @@ const DinderCard = () => {
                   )}
                   onClick={() => handleSaveDog(dog[0].id)}
                   alt="heart icon"
+
                 >
                   <img
                     className="heartpic"
@@ -125,10 +129,12 @@ const DinderCard = () => {
                   <img
                     className="arrow"
                     src={require("../assets/images/cross.png")}
+
                     alt="cross"
                   />
                 </Button>
               </div>
+
             </>
           </Card.Body>
         </Container>

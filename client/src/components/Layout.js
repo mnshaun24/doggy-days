@@ -11,6 +11,7 @@ const Layout = () => {
       <nav className="nav">
         <li>
           <Settings />
+
         </li>
         <li>
           <Link to="home">
@@ -30,6 +31,7 @@ const Layout = () => {
             />
           </Link>
         </li>
+
       </nav>
 
       <Outlet />
