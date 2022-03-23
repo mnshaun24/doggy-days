@@ -10,8 +10,15 @@ import { GET_ME } from '../utils/queries';
 
 const SavedDogs = () => {
   const {loading, data} = useQuery(GET_ME);
-  const [removeDog] = useMutation(REMOVE_DOG);
+
   const userData = data?.me || [];
+  
+  console.log(userData);
+
+  const [removeDog] = useMutation(REMOVE_DOG);
+  
+
+  // console.log(userData);
 
   const handleDeleteSavedDog = async (id) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;

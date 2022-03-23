@@ -8,7 +8,10 @@ const resolvers = {
             if(context.user) {
                 const userData = await User.findOne({ _id: context.user._id })
                     .select('-__v -password')
-                    // .populate('dogs')
+                    .populate({path: 'savedDogs',
+                        populate: { path: 'savedDogs'}
+                    })
+                
 
                 return userData;
             }
@@ -49,6 +52,7 @@ const resolvers = {
             return { token, user };
         },
         saveDog: async (parent, args, context) => {
+            console.log(context.user, args, 'save dog please be working')
             if(context.user) {
                 const updateUser = await User.findByIdAndUpdate(
                     {_id: context.user._id},
