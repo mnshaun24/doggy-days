@@ -70,7 +70,7 @@ So that I can reference my favorites while adopt my new dog.
 
 ## Deployed-App
 Deployed Link: <br>
- http://dinder-dog.herokuapp.com/
+ https://frightened-lamb-blazer.cyclic.app/
 
 ## Questions
 If you have any questions regarding the repo please contact Molly: mollymontgomery515@gmail.com, Ronya: klmirg6@gmail.com, Greg: gregory.lanctot28@gmail.com, or Shaun: mnshauntommie@gmail.com.
