@@ -33,8 +33,9 @@ While looking at dogs to adopt, there can be so many overwhelming decisions to m
 2. Apollo Client
 3. Node.js
 4. Express.js
-5. MongoDB
-6. The Dog API
+5. JWT
+6. MongoDB
+7. The Dog API
 
 ## Usage
 This application uses the MERN stack, as well as GraphQL and Apollo Client. Fork and clone down the repository, run "npm install" in the root directory, then run "npm run develop" in the root directory to start both the client and the server.
