@@ -2,7 +2,7 @@
   "name": "doggy-days",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/",
+  "proxy": "anything",
   "dependencies": {
     "@apollo/client": "^3.5.10",
     "@testing-library/jest-dom": "^5.16.2",
@@ -23,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:prod":"npm run updateProxy && npm run build",
+    "updateProxy": "node -e \"const fs = require('fs'); const pkg = require('./src/env.json'); pkg.backendHost = process.env.PROXY_URL; fs.writeFileSync('./src/env.json', JSON.stringify(pkg, null, 2));\""
   },
   "eslintConfig": {
     "extends": [

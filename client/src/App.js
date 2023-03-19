@@ -7,6 +7,7 @@ import SavedDogs from "./pages/SavedDogs";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ModalContain from "./pages/ModalContain";
 import { setContext } from "@apollo/client/link/context";
+import env from "./env.json";
 
 import {
   ApolloProvider,
@@ -16,7 +17,7 @@ import {
 } from "@apollo/client";
 
 const httpLink = createHttpLink({
-  uri: "/graphql",
+  uri: `${env.backendHost}/graphql`,
 });
 
 const authLink = setContext((_, { headers }) => {
