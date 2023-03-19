@@ -2,7 +2,6 @@
   "name": "doggy-days",
   "version": "0.1.0",
   "private": true,
-  "proxy": "anything",
   "dependencies": {
     "@apollo/client": "^3.5.10",
     "@testing-library/jest-dom": "^5.16.2",
